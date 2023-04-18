@@ -9,9 +9,12 @@ public class FakeDataProvider {
     public static String generateFirstName(){
         return faker.name().firstName();
     }
+    public static String generateSiteName(){
+        return faker.company().name();
+    }
 
     public static void main(String[] args) {
-        System.out.println(generateFirstName());
+        System.out.println(generateSiteName());
     }
 
 
