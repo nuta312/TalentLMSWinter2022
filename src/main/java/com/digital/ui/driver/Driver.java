@@ -23,6 +23,7 @@ public class Driver {
                     break;
                 case "firefox":
                     driver = FirefoxWebDriver.loadFirefoxDriver();
+                    break;
                 default:
                     throw new RuntimeException("You provided wrong browser name");
             }

@@ -8,7 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Winter2022TAF" />
-        <module name="TalentLMSWinter2022" />
+        <module name="TalentLMSWinter20222" />
       </profile>
     </annotationProcessing>
   </component>
