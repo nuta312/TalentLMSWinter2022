@@ -17,8 +17,8 @@ public class LoginTests extends BaseUiTest {
     @Owner("Nursultan")
     @Story("As a user i should be able to login")
     @Link(name = "requirements",url = "https://www.google.com/")
-    public void loginWithValidCredentialsTest() {
 
+    public void loginWithValidCredentialsTest() {
         System.out.println("This is example test");
     }
 }
