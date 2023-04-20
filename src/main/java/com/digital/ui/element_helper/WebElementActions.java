@@ -22,7 +22,7 @@ public class WebElementActions {
 
     public WebElementActions press(WebElement element){
         waitElementToBeClickAble(element);
-        element.click();
+        element.sendKeys(Keys.ENTER);
         return this;
     }
 
