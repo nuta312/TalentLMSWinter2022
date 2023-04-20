@@ -20,7 +20,10 @@ import org.testng.annotations.Test;
             loginPage.authorization();
             homePage.goToHomePage();
             homePage.clickCourses();
-            buyCoursesPage.clickCourses();
+            buyCoursesPage.clickCourses()
+                    .searchAndFindCourse("What is Machine Learning?")
+                    .clickYouTubeWindow();
+
 
         }
 
