@@ -43,5 +43,10 @@ public class WebElementActions {
         return this;
     }
 
+    public WebElementActions pressUpAndEnter(WebElement element){
+        element.sendKeys(Keys.UP,Keys.ENTER);
+        return this;
+    }
+
 
 }

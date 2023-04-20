@@ -1,6 +1,6 @@
 package ui.smoke;
 
-import com.digital.ui.pages.CoursePage;
+import com.digital.ui.pages.courses_page.CoursePage;
 import com.digital.ui.pages.HomePage;
 import com.digital.ui.pages.LoginPage;
 import org.testng.annotations.Test;
@@ -9,7 +9,6 @@ public class CoursePageTest {
 
     LoginPage loginPage = new LoginPage();
     HomePage homePage = new HomePage();
-
     CoursePage coursePage = new CoursePage();
 
     @Test
@@ -17,8 +16,10 @@ public class CoursePageTest {
         loginPage.openPage();
         loginPage.authorization();
         homePage.goToHomePage();
-        homePage.clickCourses();
+        homePage.openCoursesPage();
         coursePage.addCourseMethod();
+        coursePage.fillCourseInputs();
+//        coursePage.clickSaveBtn();
 
     }
 

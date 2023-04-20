@@ -8,14 +8,14 @@ public class HomePage extends BasePage{
     @FindBy(xpath = "//a[@class='brand']")
     public WebElement talentLmsHomePageLink;
     @FindBy(xpath = "(//a[contains(text(),'Courses')])[1]")
-    public WebElement courses;
+    public WebElement coursesPageLink;
 
     public HomePage goToHomePage(){
         talentLmsHomePageLink.click();
         return this;
     }
-    public HomePage clickCourses(){
-        courses.click();
+    public HomePage openCoursesPage(){
+        coursesPageLink.click();
         return this;
     }
 
