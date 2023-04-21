@@ -25,12 +25,12 @@ public class CoursePageTest extends BaseUiTest{
 //    }
 
 
-//    @Test(description = "C6")
-//    public void test() {
-//        addCoursePage.fillCourseInputs();
-//        addCoursePage.choosePrice();
-//        addCoursePage.clickSaveBtn();
-//    }
+    @Test(description = "C6")
+    public void testTest() {
+        addCoursePage.fillCourseInputs();
+        addCoursePage.choosePrice();
+        addCoursePage.clickSaveBtn();
+    }
 
     @Test(description = "C6")
     public void test() {
