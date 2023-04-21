@@ -3,7 +3,7 @@ package com.digital.enums;
 public enum CoursePageData {
 
 
-    COURSE_NAME1("Machine learning"),
+    COURSE_NAME1("Machine learning5"),
     COURSE_NAME2("UI/UX"),
     CATEGORY1("Middle"),
     CATEGORY2("IT"),
@@ -14,7 +14,10 @@ public enum CoursePageData {
                         "improving its accuracy."),
     DESCRIPTION2("User interface (UI) and user experience (UX) are " +
             "two words that you might hear mentioned frequently in tech " +
-            "circles (and sometimes interchangeably).");
+            "circles (and sometimes interchangeably)."),
+
+    IMAGE_PATH("C:\\Users\\User\\Desktop\\Художественная литература\\Stanford.jpg");
+//    C:\\Users\\Admin\\Desktop\\cambg_3.jpg
 
 
 

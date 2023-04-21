@@ -27,13 +27,13 @@ public class WebElementActions {
     }
 
     public WebElementActions waitElementToBeDisplayed(WebElement element){
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15))
+        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20))
                 .until(ExpectedConditions.visibilityOf(element));
         return this;
     }
 
     public WebElementActions waitElementToBeClickAble(WebElement element){
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15))
+        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20))
                 .until(ExpectedConditions.elementToBeClickable(element));
         return this;
     }
@@ -44,6 +44,7 @@ public class WebElementActions {
     }
 
     public WebElementActions pressUpAndEnter(WebElement element){
+        waitElementToBeClickAble(element);
         element.sendKeys(Keys.UP,Keys.ENTER);
         return this;
     }
