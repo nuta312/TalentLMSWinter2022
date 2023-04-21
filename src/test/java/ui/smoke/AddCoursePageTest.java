@@ -1,11 +1,14 @@
 package ui.smoke;
 
 
+import com.digital.ui.pages.courses_page.AddCoursePage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import ui.BaseUiTest;
 
-public class CoursePageTest extends BaseUiTest{
+public class AddCoursePageTest extends BaseUiTest{
+
+    AddCoursePage addCoursePage = new AddCoursePage();
     @BeforeClass
     public void openAndAddCourse() {
         addCoursePage.openCoursesPage();
@@ -45,6 +48,8 @@ public class CoursePageTest extends BaseUiTest{
         addCoursePage.choosePrice();
 
     }
+
+
 
 
 
