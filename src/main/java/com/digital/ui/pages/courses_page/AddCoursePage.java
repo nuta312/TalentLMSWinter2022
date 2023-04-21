@@ -8,11 +8,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class AddCoursePage extends BasePage {
 
-    WebElementActions elemActions = new WebElementActions();
-
-    @FindBy(xpath = "(//a[contains(text(),'Courses')])[1]")
-    public WebElement coursesPageLink;
-
     @FindBy(xpath = "//a[text()='Add course']")
     public WebElement addCourseBtn;
 
@@ -33,73 +28,40 @@ public class AddCoursePage extends BasePage {
 
     @FindBy(xpath = "//a[contains(text(),'Save and go to course index')]")
     public WebElement saveBtn;
-
-    // //a[contains(text(),'Select image')]
-    // //img[@src='pages/images/unknown_big.png']
-    @FindBy(xpath = "//span[@class='preview']")
-    public WebElement selectImg;
-
-
     @FindBy(xpath = "//a[@class='tl-bold-link tl-show-price-link']")
     public WebElement price;
 
     @FindBy(xpath = "//input[@id='course-price']")
     public WebElement priceInp;
 
-    //input[@id='course-price']
-
-
-
 
 
     public AddCoursePage addCourseMethod() {
-        elemActions.press(addCourseBtn);
+        elementActions.press(addCourseBtn);
         return this;
     }
 
     public AddCoursePage fillCourseInputs() {
-        elemActions.input(courseNameInp, CoursePageData.COURSE_NAME1.getInpVal());
+        elementActions.input(courseNameInp, CoursePageData.COURSE_NAME1.getInpVal());
 
-        elemActions.press(select);
-        elemActions.input(categoryInp, CoursePageData.CATEGORY1.getInpVal());
-        elemActions.pressDownAndEnter(categoryInp);
+        elementActions.press(select);
+        elementActions.input(categoryInp, CoursePageData.CATEGORY1.getInpVal());
+        elementActions.pressDownAndEnter(categoryInp);
 
-        elemActions.input(descriptionInp, CoursePageData.DESCRIPTION1.getInpVal());
-
-//        selectImg.click();
-//        selectImg.sendKeys(CoursePageData.IMAGE_PATH.getInpVal());
-//        selectImg.submit();
-//        JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
-//        executor.executeScript("arguments[0].click();", selectImg);
+        elementActions.input(descriptionInp, CoursePageData.DESCRIPTION1.getInpVal());
         return this;
     }
 
-
     public AddCoursePage choosePrice() {
         price.click();
-        elemActions.input(priceInp, "100");
+        elementActions.input(priceInp, "100");
         priceInp.click();
         return this;
     }
 
     public AddCoursePage clickSaveBtn() {
-        elemActions.press(dropdown);
-        elemActions.pressUpAndEnter(saveBtn);
+        elementActions.press(dropdown);
+        elementActions.pressUpAndEnter(saveBtn);
         return this;
     }
-
-    public AddCoursePage openCoursesPage(){
-        coursesPageLink.click();
-        return this;
-    }
-
-
-
-
-
-
-
-
-
-
 }
