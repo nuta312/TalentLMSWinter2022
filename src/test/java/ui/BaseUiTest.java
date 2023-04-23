@@ -15,6 +15,7 @@ public abstract class BaseUiTest implements DriverActions {
     @BeforeClass
     public void setUp() {
         driver = Driver.getDriver();
+        driver.get("https://dmc312.talentlms.com/index");
     }
 
     @AfterClass

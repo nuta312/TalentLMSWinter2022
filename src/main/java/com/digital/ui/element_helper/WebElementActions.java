@@ -21,7 +21,7 @@ public class WebElementActions {
     }
 
     public WebElementActions press(WebElement element){
-        waitElementToBeClickAble(element);
+        waitElementToBeDisplayed(element);
         element.click();
         return this;
     }
