@@ -1,12 +1,13 @@
 package ui;
-
-
+import com.digital.Listeners.ScreenshotListener;
 import com.digital.ui.driver.Driver;
 import com.digital.ui.driver.DriverActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 
+@Listeners(ScreenshotListener.class)
 
 public abstract class BaseUiTest implements DriverActions {
 
@@ -15,7 +16,10 @@ public abstract class BaseUiTest implements DriverActions {
     @BeforeClass
     public void setUp() {
         driver = Driver.getDriver();
+
         driver.get("https://dmc312.talentlms.com/index");
+
+
     }
 
     @AfterClass
