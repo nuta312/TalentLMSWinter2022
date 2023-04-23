@@ -11,12 +11,11 @@ public class UsersOptions {
 
     public UsersOptions openGroups() throws InterruptedException {
         Driver.getDriver().get("https://dmc312.talentlms.com/user/groups/id:1");
-        Thread.sleep(2000);
         return this;
     }
 
     public UsersOptions openFiles() throws InterruptedException {
-        Driver.getDriver().get("https://dmc312.talentlms.com/user/files/id:1");
+        Driver.getDriver().navigate().to("https://dmc312.talentlms.com/user/files/id:1");
         Thread.sleep(2000);
         return this;
     }

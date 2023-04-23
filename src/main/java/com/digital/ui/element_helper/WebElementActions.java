@@ -1,6 +1,7 @@
 package com.digital.ui.element_helper;
 
 import com.digital.ui.driver.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -27,7 +28,7 @@ public class WebElementActions {
     }
 
     public WebElementActions waitElementToBeDisplayed(WebElement element){
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15))
+        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(7))
                 .until(ExpectedConditions.visibilityOf(element));
         return this;
     }
@@ -35,6 +36,13 @@ public class WebElementActions {
     public WebElementActions waitElementToBeClickAble(WebElement element){
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15))
                 .until(ExpectedConditions.elementToBeClickable(element));
+        return this;
+    }
+
+
+    public WebElementActions waitElementToBeDisplayedLocated(WebElement element,String locator){
+        new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(7))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
         return this;
     }
 

@@ -15,9 +15,8 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public HomePage openUsers() throws InterruptedException {
-        Users.click();
-        Thread.sleep(2000);
+    public HomePage openUsers() {
+        elementActions.press(Users);
         return this;
     }
 }

@@ -28,7 +28,11 @@ public class TestFindTD3 extends BaseUiTest {
         homePage.openUsers();
         usersPage.openUser("E. Chadaev");
         usersOptions.openFiles();
-        filesPage.editFile("Digital","sd,dddds,sdds");
-        Thread.sleep(5000);
+        filesPage.uploadFile("C:\\Users\\DMC_Nora\\Desktop\\Routes.txt")
+                .openEditForm("Routes.txt")
+                        .editNameOfFile("Routes.txt","Mikrotik")
+                                .inputTags("cisco,vpn,p2p")
+                                        .confirmEditForm();
+        Thread.sleep(2000);
     }
 }

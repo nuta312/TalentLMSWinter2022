@@ -22,27 +22,46 @@ public class PageGroups extends BasePage {
     public WebElement GroupMember;
 
 
-    public PageGroups deleteOrAddGroup(String groupName) throws InterruptedException {
+//    public PageGroups deleteOrAddGroup(String groupName) throws InterruptedException {
+//        try {
+//            WebElement groupNum = Driver.getDriver().findElement(By.xpath("//tr[contains(., '" + groupName + "')]//div[contains(@class,'tl-user-group-courses-noinfo-wrapper')]"));
+//            String styleAttributeValue = groupNum.getAttribute("style");
+//
+//            if (styleAttributeValue.contains("display: none")) {
+//                WebElement addGroupBtn = Driver.getDriver().findElement(By.xpath("//tr[contains(., '" + groupName + "')]//i[contains(@alt,'Remove from group')]"));
+//                removeGroupBtn.click();
+//            } else {
+//                WebElement removeGroupBtn = Driver.getDriver().findElement(By.xpath("//tr[contains(., '" + groupName + "')]//i[contains(@alt,'Add to group')]"));
+//                addGroupBtn.click();
+//            }
+//            Thread.sleep(2000);
+//            return this;
+//        } catch (NoSuchElementException e) {
+//            System.out.println("Такой группы нету");
+//            return null;
+//        }
+//    }
+
+
+    public PageGroups addGroup (String groupName) {
         try {
-
-
             WebElement groupNum = Driver.getDriver().findElement(By.xpath("//tr[contains(., '" + groupName + "')]//div[contains(@class,'tl-user-group-courses-noinfo-wrapper')]"));
             String styleAttributeValue = groupNum.getAttribute("style");
 
             if (styleAttributeValue.contains("display: none")) {
-                WebElement addGroupBtn = Driver.getDriver().findElement(By.xpath("//tr[contains(., '" + groupName + "')]//i[contains(@alt,'Remove from group')]"));
-                addGroupBtn.click();
-            } else {
-                WebElement removeGroupBtn = Driver.getDriver().findElement(By.xpath("//tr[contains(., '" + groupName + "')]//i[contains(@alt,'Add to group')]"));
+                WebElement removeGroupBtn = Driver.getDriver().findElement(By.xpath("//tr[contains(., '" + groupName + "')]//i[contains(@alt,'Remove from group')]"));
                 removeGroupBtn.click();
+                return this;
             }
-            Thread.sleep(2000);
             return this;
         } catch (NoSuchElementException e) {
             System.out.println("Такой группы нету");
             return null;
         }
     }
+
+
+
 
 
     public  PageGroups deleteOrAddCourses(String groupName) throws InterruptedException {
