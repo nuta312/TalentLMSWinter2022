@@ -50,7 +50,7 @@ public class ScreenshotListener extends TestListenerAdapter {
     public void onTestFailure(ITestResult failingTest) {
         try {
             WebDriver driver = Driver.getDriver();
-            String screenshotDirectory = System.getProperty("screenshotDirectory", "target/screenshots");
+            String screenshotDirectory = System.getProperty("screenshotDirectory", "target/allure-results");
             String screenshotAbsolutePath = screenshotDirectory + File.separator + System.currentTimeMillis() + "_" + failingTest.getName() + ".png";
             File screenshot = new File(screenshotAbsolutePath);
             if (createFile(screenshot)) {
