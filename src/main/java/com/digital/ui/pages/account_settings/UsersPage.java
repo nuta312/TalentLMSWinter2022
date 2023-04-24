@@ -4,12 +4,18 @@ package com.digital.ui.pages.account_settings;
 import com.digital.ui.driver.Driver;
 import com.digital.ui.element_helper.WebElementActions;
 import com.github.javafaker.Faker;
+import org.bouncycastle.jcajce.provider.symmetric.Threefish;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 
 /**
@@ -109,11 +115,14 @@ public class UsersPage {
 
     @FindBy(xpath = "//input[@value='Save']")
     public WebElement saveBtn;
+    @FindBy(xpath = "//div[text()='Users settings updated successfully']")
+    public WebElement successMessage;
     @FindBy(xpath = "//a[text()='cancel']")
     public WebElement cancelClick;
 
     @FindBy(xpath = "//i[@title='Log out']")
     public WebElement logOutBtn;
+
 
    public UsersPage openUsersPage(){
        usersPage.click();
@@ -129,7 +138,7 @@ public class UsersPage {
         String signUpOption = generateSignUpOption().toString();
         if (signUpOption.equals("Direct")){
             String usersVerification = faker.options().option("Select user verification", "CAPTCHA verification", "CAPTCHA + Email verification",
-                    "CAPTCHA + Admin activation", "Admin Activation");
+                    "CAPTCHA + Admin activation", "Admin Activation", "Email verification");
             elementActions.input(userVerification, usersVerification);
             actions.moveToElement(icon1).perform();
         }
@@ -141,6 +150,7 @@ public class UsersPage {
        actions.moveToElement(icon2).perform();
        return this;
     }
+    //TODO No options available
     public UsersPage navigateToDefaultGroup(){
        defaultGroup.sendKeys("");
        actions.moveToElement(icon3).perform();
@@ -154,6 +164,7 @@ public class UsersPage {
        return this;
     }
     public UsersPage checkPasswordChangeDays() {
+        passwordSettings.click();
        passwordChangeXDaysBox.click();
        passwordDays.clear();
        String afterDays = String.valueOf(faker.number().numberBetween(1,360));
@@ -210,6 +221,7 @@ public class UsersPage {
        actions.moveToElement(icon9).perform();
        return this;
     }
+    //TODO Single-Sign-on(SSO) not supported
     public UsersPage checkSingleSignOn(){
        actions.moveToElement(singleSignOn);
        return this;
@@ -221,6 +233,16 @@ public class UsersPage {
        }
        return this;
     }
+    //TODO below method doesn't work
+    public boolean isSuccessMessageDisplayed() {
+        checkSaveBtn();
+        try {
+            return successMessage.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
     public UsersPage checkCancelClick(){
        if (cancelClick.isEnabled()){
            cancelClick.click();

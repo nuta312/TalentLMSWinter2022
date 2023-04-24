@@ -1,4 +1,4 @@
-package ui.account_settings;
+package ui;
 
 import com.digital.ui.driver.Driver;
 import com.digital.ui.element_helper.WebElementActions;
