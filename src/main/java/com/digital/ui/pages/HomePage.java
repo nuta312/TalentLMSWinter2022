@@ -3,6 +3,9 @@ package com.digital.ui.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * @author Adilet Kushubekov
+ */
 public class HomePage extends BasePage{
 
     @FindBy(xpath = "//a[@class='brand']")

@@ -13,6 +13,13 @@ public class FakeDataProvider {
         return faker.company().name();
     }
 
+    public static String generateAnyText(){
+        return faker.chuckNorris().fact();
+    }
+    public static String generateOverriddenLanguage(){
+        return faker.nation().language();
+    }
+
     public static void main(String[] args) {
         System.out.println(generateSiteName());
     }

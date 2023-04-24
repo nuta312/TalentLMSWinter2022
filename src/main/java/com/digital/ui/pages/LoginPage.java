@@ -1,10 +1,15 @@
 package com.digital.ui.pages;
 
 import com.digital.config.ConfigReader;
+import com.digital.ui.driver.Driver;
 import com.digital.ui.element_helper.WebElementActions;
+import com.digital.ui.pages.account_settings.BasicSettingsPage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * @author Adilet Kushubekov
+ */
 public class LoginPage extends BasePage{
     WebElementActions elementActions = new WebElementActions();
 
@@ -14,6 +19,11 @@ public class LoginPage extends BasePage{
     public WebElement password;
     @FindBy(name = "submit")
     public WebElement BtnLogin;
+
+    public LoginPage openPage(){
+        Driver.getDriver().get(ConfigReader.getProperty("applicationUrl2"));
+        return this;
+    }
 
     public LoginPage authorization(){
         elementActions.input(login,ConfigReader.getProperty("login"))

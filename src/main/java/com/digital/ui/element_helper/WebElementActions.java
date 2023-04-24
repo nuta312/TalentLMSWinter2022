@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Nursultan Musakunov
@@ -41,6 +42,13 @@ public class WebElementActions {
     public WebElementActions pressDownAndEnter(WebElement element){
         element.sendKeys(Keys.DOWN,Keys.ENTER);
         return this;
+    }
+    public static void pause(Integer milliseconds){
+        try {
+            TimeUnit.MILLISECONDS.sleep(milliseconds);
+        }catch (InterruptedException e){
+            System.out.println("error seconds");
+        }
     }
 
 
