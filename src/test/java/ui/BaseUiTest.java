@@ -1,6 +1,5 @@
 package ui;
 
-
 import com.digital.Listeners.ScreenshotListener;
 import com.digital.ui.driver.Driver;
 import com.digital.ui.driver.DriverActions;
