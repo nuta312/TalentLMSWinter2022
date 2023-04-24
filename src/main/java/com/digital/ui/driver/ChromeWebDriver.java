@@ -7,10 +7,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
-public class ChromeWebDriver implements Waits{
+public class ChromeWebDriver implements  Waits{
 
-    private static WebDriver driver;
-
+   private static WebDriver driver;
     public static WebDriver loadChromeDriver(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
@@ -24,13 +23,14 @@ public class ChromeWebDriver implements Waits{
         driver.manage().window().maximize();
         return driver;
     }
-    @Override
-    public WebDriver.Timeouts setUpImplicitWait(WebDriver driver){
-        return driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Waits.implicitWaitTime));
-    }
 
     @Override
     public WebDriver.Timeouts setUpImplicitWait() {
         return null;
+    }
+
+    @Override
+    public WebDriver.Timeouts setUpImplicitWait(WebDriver driver) {
+        return driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Waits.implicitWaitTime));
     }
 }

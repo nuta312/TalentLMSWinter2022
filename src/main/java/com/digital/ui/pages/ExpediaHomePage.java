@@ -7,13 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ExpediaHomePage {
+public class ExpediaHomePage extends BasePage{
 
     private WebElementActions elementActions = new WebElementActions();
 
-    public ExpediaHomePage() {
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
+
 
     @FindBy(xpath = "//span[text()='Stays']")
     public WebElement stays;

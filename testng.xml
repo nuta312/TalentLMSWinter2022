@@ -3,8 +3,7 @@
 <suite name="All tests">
     <test name="Regression Tests">
         <classes>
-            <class name="testng.CalculatorTest"></class>
-            <class name="testng.TestNGDemo"></class>
+            <class name="ui.smoke.LoginTests"></class>
         </classes>
     </test>
 </suite>
