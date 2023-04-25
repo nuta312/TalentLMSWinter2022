@@ -69,6 +69,7 @@
             </exclusions>
         </dependency>
 
+
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
@@ -77,8 +78,30 @@
             <scope>runtime</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.mailosaur</groupId>
+            <artifactId>mailosaur-java</artifactId>
+            <version>7.12.0</version>
+        </dependency>
+
+
 
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 
 
