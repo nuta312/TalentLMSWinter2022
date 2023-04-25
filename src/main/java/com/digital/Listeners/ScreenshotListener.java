@@ -2,6 +2,7 @@ package com.digital.Listeners;
 
 
 import com.digital.ui.driver.Driver;
+import io.qameta.allure.Allure;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -50,7 +51,7 @@ public class ScreenshotListener extends TestListenerAdapter {
     public void onTestFailure(ITestResult failingTest) {
         try {
             WebDriver driver = Driver.getDriver();
-            String screenshotDirectory = System.getProperty("screenshotDirectory", "target/allure-results");
+            String screenshotDirectory = System.getProperty("screenshotDirectory", "target/screenshots");
             String screenshotAbsolutePath = screenshotDirectory + File.separator + System.currentTimeMillis() + "_" + failingTest.getName() + ".png";
             File screenshot = new File(screenshotAbsolutePath);
             if (createFile(screenshot)) {
@@ -59,10 +60,8 @@ public class ScreenshotListener extends TestListenerAdapter {
                 } catch (ClassCastException weNeedToAugmentOurDriverObject) {
                     writeScreenshotToFile(new Augmenter().augment(driver), screenshot);
                 }
-
             }
         } catch (Exception ex) {
-
         }
     }
 }
