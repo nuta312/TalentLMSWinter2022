@@ -1,8 +1,7 @@
 package com.digital.ui.pages;
 
-import com.digital.config.ConfigReader;
+import static com.digital.config.ConfigReader.getProperty;
 import com.digital.ui.driver.Driver;
-import com.digital.ui.element_helper.WebElementActions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -13,22 +12,23 @@ public class LoginPage extends BasePage{
     @FindBy(name = "password")
     public WebElement password;
     @FindBy(name = "submit")
-    public WebElement BtnLogin;
+    public WebElement btnLogin;
+
 
     public LoginPage openPage(){
-        Driver.getDriver().get(ConfigReader.getProperty("applicationUrl2"));
+        Driver.getDriver().get(getProperty("applicationUrl2"));
         return this;
     }
 
     public LoginPage authorization(){
-        elementActions.input(login,ConfigReader.getProperty("login"))
-                .input(password,ConfigReader.getProperty("password"));
-        BtnLogin.click();
+        elementActions.input(login, getProperty("login"))
+                .input(password, getProperty("password"));
+        btnLogin.click();
         return this;
     }
 
-    public LoginPage closePage(){
-        Driver.closeDriver();
-        return this;
-    }
+//    public LoginPage closePage(){
+//        Driver.closeDriver();
+//        return this;
+//    }
 }

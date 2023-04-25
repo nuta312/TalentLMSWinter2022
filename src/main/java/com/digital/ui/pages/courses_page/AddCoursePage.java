@@ -1,12 +1,18 @@
 package com.digital.ui.pages.courses_page;
 
-import com.digital.enums.CoursePageData;
-import com.digital.ui.element_helper.WebElementActions;
+import com.digital.enums.AddCourse;
+import com.digital.ui.driver.Driver;
 import com.digital.ui.pages.BasePage;
+import com.github.javafaker.Faker;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+
+import java.util.List;
 
 public class AddCoursePage extends BasePage {
+    public static Faker faker = new Faker();
 
     @FindBy(xpath = "//a[text()='Add course']")
     public WebElement addCourseBtn;
@@ -34,34 +40,55 @@ public class AddCoursePage extends BasePage {
     @FindBy(xpath = "//input[@id='course-price']")
     public WebElement priceInp;
 
+    @FindBy(xpath = "//a[text()='cancel']")
+    public WebElement cancelBtn;
 
 
-    public AddCoursePage addCourseMethod() {
+
+    public AddCoursePage addingNewCourse() {
         elementActions.press(addCourseBtn);
         return this;
     }
 
-    public AddCoursePage fillCourseInputs() {
-        elementActions.input(courseNameInp, CoursePageData.COURSE_NAME1.getInpVal());
+    String book = faker.book().title();
 
+    public AddCoursePage fillCourseInputs() {
+        elementActions.input(courseNameInp, book);
         elementActions.press(select);
-        elementActions.input(categoryInp, CoursePageData.CATEGORY1.getInpVal());
+        elementActions.input(categoryInp, AddCourse.SAMPLES.getValue());
         elementActions.pressDownAndEnter(categoryInp);
 
-        elementActions.input(descriptionInp, CoursePageData.DESCRIPTION1.getInpVal());
+        elementActions.input(descriptionInp, faker.book().publisher());
         return this;
     }
 
     public AddCoursePage choosePrice() {
         price.click();
-        elementActions.input(priceInp, "100");
+        elementActions.input(priceInp, AddCourse.PRICE.getValue());
         priceInp.click();
         return this;
     }
 
-    public AddCoursePage clickSaveBtn() {
+    public AddCoursePage saveNewCourse() {
         elementActions.press(dropdown);
         elementActions.pressUpAndEnter(saveBtn);
         return this;
     }
+
+    public AddCoursePage cancelBtn() {
+        elementActions.press(cancelBtn);
+        return this;
+    }
+
+    public AddCoursePage checkAddedCourseWithAssert() {
+        List<WebElement> test = Driver.getDriver().findElements(By.tagName("td"));
+
+        for(int i = 0; i < test.size(); i++) {
+            if(test.get(i).getText().equals(book)) {
+                Assert.assertEquals(test.get(i).getText(), book);
+            }
+        }
+        return this;
+    }
+
 }

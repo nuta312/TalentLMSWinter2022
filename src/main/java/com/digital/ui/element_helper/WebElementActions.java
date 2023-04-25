@@ -3,15 +3,19 @@ package com.digital.ui.element_helper;
 import com.digital.ui.driver.Driver;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Nursultan Musakunov
  */
 public class WebElementActions {
+
+    Actions actions = new Actions(Driver.getDriver());
 
 
     public WebElementActions input(WebElement element,String txt){
@@ -33,7 +37,7 @@ public class WebElementActions {
     }
 
     public WebElementActions waitElementToBeClickAble(WebElement element){
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20))
+        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(40))
                 .until(ExpectedConditions.elementToBeClickable(element));
         return this;
     }
@@ -47,6 +51,19 @@ public class WebElementActions {
         waitElementToBeClickAble(element);
         element.sendKeys(Keys.UP,Keys.ENTER);
         return this;
+    }
+
+    public WebElementActions moveToElement (WebElement element){
+        actions.moveToElement(element).perform();
+        return this;
+    }
+
+    public static void pause(Integer milliseconds){
+        try {
+            TimeUnit.MILLISECONDS.sleep(milliseconds);
+        }catch (InterruptedException e){
+            System.out.println("error seconds");
+        }
     }
 
 
