@@ -6,6 +6,12 @@ import com.digital.ui.pages.courses_page.CoursesHomePage;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+
+/**
+ * @author Burulai Narzieva
+ */
+
+
 public class CoursesHomeTest {
     CoursesHomePage coursesHomePage = new CoursesHomePage();
     LoginPage loginPage = new LoginPage();

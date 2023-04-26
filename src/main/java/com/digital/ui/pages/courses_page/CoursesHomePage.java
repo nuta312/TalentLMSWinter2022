@@ -9,6 +9,10 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
+/**
+ * @author Burulai Narzieva
+ */
+
 public class CoursesHomePage extends BasePage {
     @FindBy(xpath = "(//a[contains(text(),'Courses')])[1]")
     public WebElement coursesPageLink;
@@ -21,10 +25,6 @@ public class CoursesHomePage extends BasePage {
 
     @FindBy(xpath = "//span[@class='tl-formatted-course-name']")
     public List<WebElement> listOfCourses;
-
-
-
-
 
 
 
@@ -112,8 +112,6 @@ public class CoursesHomePage extends BasePage {
 //
 
 
-
-
 //    public CoursesHomePage deletingCourse(){
 //
 //        for (WebElement course : allCourseList) {
@@ -127,23 +125,6 @@ public class CoursesHomePage extends BasePage {
 //                        elementActions.press(deleteOkBtn);
 //                    }
 //                }
-//        }
-//        return this;
-//    }
-//
-//    public CoursesHomePage cloningCourse(){
-//
-//        for (WebElement course : allCourseList) {
-//            elementActions.moveToElement(course);
-//
-//            for (WebElement statusOfCourse : allStatusOfCourses) {
-//                elementActions.moveToElement(statusOfCourse);
-//
-//                for (WebElement toCloneBtn : allCloneBtn) {
-//                    elementActions.press(toCloneBtn);
-//                    elementActions.press(cloneOkBtn);
-//                }
-//            }
 //        }
 //        return this;
 //    }
