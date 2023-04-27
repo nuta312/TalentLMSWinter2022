@@ -7,14 +7,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage{
-    WebElementActions elementActions = new WebElementActions();
 
     @FindBy(name = "login")
     public WebElement login;
     @FindBy(name = "password")
     public WebElement password;
     @FindBy(name = "submit")
-    public WebElement BtnLogin;
+    public WebElement btnLogin;
 
     public LoginPage openPage(){
         Driver.getDriver().get(ConfigReader.getProperty("applicationUrl2"));
@@ -24,7 +23,7 @@ public class LoginPage extends BasePage{
     public LoginPage authorization(){
         elementActions.input(login,ConfigReader.getProperty("login"))
                 .input(password,ConfigReader.getProperty("password"));
-        BtnLogin.click();
+        btnLogin.click();
         return this;
     }
 

@@ -3,6 +3,8 @@ package com.digital.ui.driver;
 import com.digital.config.ConfigReader;
 import org.openqa.selenium.WebDriver;
 
+import java.net.MalformedURLException;
+
 
 public class Driver {
 
@@ -23,6 +25,9 @@ public class Driver {
                     break;
                 case "firefox" :
                     driver = FirefoxWebDriver.loadFirefoxDriver();
+                case "sauce_Mac_Safari" :
+                    driver = SauceLabsMacSafari.loadSauceLabMacSafariDriver();
+                    break;
                 default:
                     throw new RuntimeException("You provided wrong browser name");
             }

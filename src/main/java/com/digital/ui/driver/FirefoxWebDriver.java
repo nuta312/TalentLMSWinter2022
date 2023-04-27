@@ -14,8 +14,8 @@ public class FirefoxWebDriver implements Waits {
     public static WebDriver loadFirefoxDriver(){
         WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--disable-extensions");
-        options.addArguments("--no-sandbox");
+//        options.addArguments("--disable-extensions");
+//        options.addArguments("--no-sandbox");
 
 
         driver = new FirefoxDriver(options);
