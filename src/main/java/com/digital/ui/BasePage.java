@@ -1,14 +1,15 @@
-package com.digital.ui.pages;
+package com.digital.ui;
 
 import com.digital.ui.driver.Driver;
-import com.digital.ui.driver.DriverActions;
 import com.digital.ui.element_helper.WebElementActions;
 import org.openqa.selenium.support.PageFactory;
 
-public abstract class BasePage implements DriverActions {
+public abstract class BasePage {
 
     WebElementActions elementActions = new WebElementActions();
-    public BasePage() {
-        PageFactory.initElements(Driver.getDriver(), this);
+    public void BasePage(){
+        PageFactory.initElements(Driver.getDriver(),this);
     }
+
+
 }

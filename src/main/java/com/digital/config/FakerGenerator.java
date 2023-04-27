@@ -3,10 +3,6 @@ package com.digital.config;
 import com.github.javafaker.Faker;
 import org.apache.commons.lang3.RandomStringUtils;
 
-/*
-By Erlan Chaadaev
- */
-
 public class FakerGenerator {
 
     Faker faker = new Faker();
@@ -34,4 +30,5 @@ public class FakerGenerator {
     public  String randomPassword(){
         return faker.internet().password(8,12,true,true,true);
     }
+
 }
