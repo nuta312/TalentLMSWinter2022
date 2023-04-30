@@ -21,21 +21,21 @@ import java.util.List;
 
 public class IFrameDemo {
 
-//    public static void main(String[] args) {
-//        WebDriver driver = Driver.getDriver();
-//
-//        driver.navigate().to("https://www.amazon.com/");
-////        driver.switchTo().frame("frame1");
-////        WebElement element = driver.findElement(By.id("sampleHeading"));
-////        System.out.println(element.getText());
-////        driver.switchTo().defaultContent();
-//        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Iphone14", Keys.ENTER);
-//        List<WebElement> brandList = driver.findElements(By.xpath("//div[@id='brandsRefinements']/ul/span/li/span/a"));
-//
-//        for (WebElement s : brandList) {
-//            System.out.println(s.getText());
-//        }
-//    }
+    public static void main(String[] args) {
+        WebDriver driver = Driver.getDriver();
+
+        driver.navigate().to("https://www.amazon.com/");
+//        driver.switchTo().frame("frame1");
+//        WebElement element = driver.findElement(By.id("sampleHeading"));
+//        System.out.println(element.getText());
+//        driver.switchTo().defaultContent();
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Iphone14", Keys.ENTER);
+        List<WebElement> brandList = driver.findElements(By.xpath("//div[@id='brandsRefinements']/ul/span/li/span/a"));
+
+        for (WebElement s : brandList) {
+            System.out.println(s.getText());
+        }
+    }
 
 
         @Test

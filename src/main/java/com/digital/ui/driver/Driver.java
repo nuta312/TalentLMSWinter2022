@@ -25,7 +25,7 @@ public class Driver {
                     break;
                 case "firefox" :
                     driver = FirefoxWebDriver.loadFirefoxDriver();
-                case "sauce_Mac_Safari" :
+                case "sauce_mac_safari" :
                     driver = SauceLabsMacSafari.loadSauceLabMacSafariDriver();
                     break;
                 default:
