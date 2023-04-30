@@ -13,9 +13,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 
 /**
@@ -24,25 +26,25 @@ import java.time.Duration;
 
 public class UsersPage {
 
-   private WebElementActions elementActions = new WebElementActions();
-   Faker faker = new Faker();
+    private WebElementActions elementActions = new WebElementActions();
+    Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
 
-   public UsersPage(){
-       PageFactory.initElements(Driver.getDriver(), this);
-   }
+    public UsersPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
     @FindBy(xpath = "//a[text()='Users']")
     public WebElement usersPage;
 
-   @FindBy(xpath = "//select[@name='signup']")
+    @FindBy(xpath = "//select[@name='signup']")
     public WebElement signUp;
 
-   @FindBy(xpath = "//select[@name='verification']")
-   public WebElement userVerification;
+    @FindBy(xpath = "//select[@name='verification']")
+    public WebElement userVerification;
 
-   @FindBy(xpath = "(//div[@class='tl-js-tooltip-trigger'])[1]")
-   public WebElement icon1;
+    @FindBy(xpath = "(//div[@class='tl-js-tooltip-trigger'])[1]")
+    public WebElement icon1;
     @FindBy(xpath = "(//div[@class='tl-js-tooltip-trigger'])[2]")
     public WebElement icon2;
     @FindBy(xpath = "(//div[@class='tl-js-tooltip-trigger'])[3]")
@@ -65,39 +67,39 @@ public class UsersPage {
     @FindBy(xpath = "//select[@name='default_type']")
     public WebElement defaultUserType;
 
-   @FindBy(xpath = "//select[@name='default_group']")
+    @FindBy(xpath = "//select[@name='default_group']")
     public WebElement defaultGroup;
 
-   @FindBy(xpath = "//a[text()='Password settings']")
+    @FindBy(xpath = "//a[text()='Password settings']")
     public WebElement passwordSettings;
-   @FindBy(xpath = "//input[@id='strong_passwords']")
-   public WebElement strongPasswordBox;
-   @FindBy(xpath = "//input[@id='password_change_x_days']")
-   public WebElement passwordChangeXDaysBox;
-   @FindBy(xpath = "//input[@id='password_change_days']")
-   public WebElement passwordDays;
-   @FindBy(xpath = "//input[@id='password_change']")
-   public WebElement passwordChangeBox;
-   @FindBy(xpath = "//input[@id='lock_login_retries']")
-   public WebElement lockLoginBox;
-   @FindBy(xpath = "//input[@id='lock_login_retry_attempts']")
-   public WebElement retryAttempts;
-   @FindBy(xpath = "//input[@id='lock_login_retry_minutes']")
-   public WebElement retryMinutes;
+    @FindBy(xpath = "//input[@id='strong_passwords']")
+    public WebElement strongPasswordBox;
+    @FindBy(xpath = "//input[@id='password_change_x_days']")
+    public WebElement passwordChangeXDaysBox;
+    @FindBy(xpath = "//input[@id='password_change_days']")
+    public WebElement passwordDays;
+    @FindBy(xpath = "//input[@id='password_change']")
+    public WebElement passwordChangeBox;
+    @FindBy(xpath = "//input[@id='lock_login_retries']")
+    public WebElement lockLoginBox;
+    @FindBy(xpath = "//input[@id='lock_login_retry_attempts']")
+    public WebElement retryAttempts;
+    @FindBy(xpath = "//input[@id='lock_login_retry_minutes']")
+    public WebElement retryMinutes;
 
-   @FindBy(xpath = "//a[text()='Terms of Service']")
-   public WebElement termsOfService;
-   @FindBy(xpath = "//textarea[@name='license_note']")
-   public WebElement licenceNote;
-   @FindBy(xpath = "//span[@class='add-on textarea-countdown']")
-   public WebElement countdown;
-   @FindBy(xpath = "//input[@id='reset-viewed-license']")
-   public WebElement resetLicenceBox;
+    @FindBy(xpath = "//a[text()='Terms of Service']")
+    public WebElement termsOfService;
+    @FindBy(xpath = "//textarea[@name='license_note']")
+    public WebElement licenceNote;
+    @FindBy(xpath = "//div[@class='input-append tl-countdown']")
+    public WebElement countdown;
+    @FindBy(xpath = "//input[@id='reset-viewed-license']")
+    public WebElement resetLicenceBox;
 
-   @FindBy(xpath = "//a[text()='Visible user format']")
-   public WebElement visibleUserFormat;
-   @FindBy(xpath = "//select[@name='user_format']")
-   public WebElement userFormat;
+    @FindBy(xpath = "//a[text()='Visible user format']")
+    public WebElement visibleUserFormat;
+    @FindBy(xpath = "//select[@name='user_format']")
+    public WebElement userFormat;
 
     @FindBy(xpath = "//a[text()='Social options']")
     public WebElement socialOptions;
@@ -120,137 +122,48 @@ public class UsersPage {
     @FindBy(xpath = "//a[text()='cancel']")
     public WebElement cancelClick;
 
-    @FindBy(xpath = "//i[@title='Log out']")
-    public WebElement logOutBtn;
 
-
-   public UsersPage openUsersPage(){
-       usersPage.click();
-       return this;
-   }
-   public UsersPage generateSignUpOption(){
-        String  userSignUp = faker.options().option("Direct", "Manually (from Admin)");
-        elementActions.input(signUp,userSignUp);
+    public UsersPage generateSignUpOption() {
+        signUp.click();
+        String signUpMenu = faker.options().option("Direct", "Manually (from Admin)");
+        elementActions.input(signUp,signUpMenu);
         return this;
     }
-    //TODO Modify Method to generate other options than "Select user verification"
     public UsersPage generateUserVerificationOption(){
-        String signUpOption = generateSignUpOption().toString();
-        if (signUpOption.equals("Direct")){
             String usersVerification = faker.options().option("Select user verification", "CAPTCHA verification", "CAPTCHA + Email verification",
                     "CAPTCHA + Admin activation", "Admin Activation", "Email verification");
             elementActions.input(userVerification, usersVerification);
-            actions.moveToElement(icon1).perform();
-        }
         return this;
     }
-    public UsersPage generateDefaultUserTypeOption(){
-       String defaultUsersType = faker.options().option("Learner-Type", "SuperAdmin", "Admin-Type", "Trainer-Type");
-       elementActions.input(defaultUserType,defaultUsersType);
-       actions.moveToElement(icon2).perform();
-       return this;
-    }
-    //TODO No options available
-    public UsersPage navigateToDefaultGroup(){
-       defaultGroup.sendKeys("");
-       actions.moveToElement(icon3).perform();
-       return this;
-    }
-    //TODO Make sure below method run correctly
-    public UsersPage checkStrongPassword() {
-       passwordSettings.click();
-       strongPasswordBox.sendKeys("");
-       actions.moveToElement(icon4).perform();
-       return this;
-    }
-    public UsersPage checkPasswordChangeDays() {
-        passwordSettings.click();
-       passwordChangeXDaysBox.click();
-       passwordDays.clear();
-       String afterDays = String.valueOf(faker.number().numberBetween(1,360));
-       elementActions.input(passwordDays, afterDays);
-       return this;
-    }
-    public UsersPage checkPasswordChange(){
-       passwordChangeBox.click();
-       actions.moveToElement(icon5).perform();
-       return this;
-    }
-    public UsersPage checkLockLogin(){
-       lockLoginBox.click();
-       retryAttempts.clear();
-       String attempts = String.valueOf(faker.number().numberBetween(1,10));
-       elementActions.input(retryAttempts,attempts);
-       retryMinutes.clear();
-       String minutes = String.valueOf(faker.number().numberBetween(1,10));
-       elementActions.input(retryMinutes,minutes);
-       actions.moveToElement(icon6).perform();
-       return this;
-    }
-    //TODO crosscheck is there a need to modify below method
-    public UsersPage generateLicenceNote(){
-       termsOfService.click();
-       String note = faker.lorem().fixedString(3500);
-       elementActions.input(licenceNote,note);
-       if (resetLicenceBox.isSelected()){
-           resetLicenceBox.click();
-       }
-    return this;
-    }
-    public UsersPage generateUserFormat(){
-       visibleUserFormat.click();
-       String usersFormat = faker.options().option("F. Last name", "First name L.", "First name Last name",
-               "Last name F.","Last name First name", "Username");
-       elementActions.input(userFormat,usersFormat);
-       return this;
-    }
-    public UsersPage scrollDownPage(){
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    public UsersPage generateDefaultUserTypeOption() {
+        String defaultUsersType = faker.options().option("Learner-Type", "SuperAdmin", "Admin-Type", "Trainer-Type");
+        elementActions.input(defaultUserType, defaultUsersType);
         return this;
     }
-    public UsersPage checkSocialOptions(){
-       socialOptions.click();
-       socialSignUpBox.click();
-       actions.moveToElement(icon6).perform();
-       socialCatalogBox.click();
-       actions.moveToElement(icon7).perform();
-       socialShareBox.click();
-       actions.moveToElement(icon8).perform();
-       courseRatingBox.click();
-       actions.moveToElement(icon9).perform();
-       return this;
+    public UsersPage inputFields(WebElement clickText, WebElement checkbox, WebElement field, String input){
+        clickText.click();
+        checkbox.click();
+        field.clear();
+        field.sendKeys(input);
+        return this;
     }
-    //TODO Single-Sign-on(SSO) not supported
-    public UsersPage checkSingleSignOn(){
-       actions.moveToElement(singleSignOn);
-       return this;
+    public UsersPage checkBoxes(WebElement clickElement, WebElement checkbox) {
+        clickElement.click();
+        checkbox.sendKeys("");
+        return this;
     }
-    //TODO Mention about saveBtn Feature
-    public UsersPage checkSaveBtn(){
-       if (saveBtn.isEnabled()){
-           saveBtn.click();
-       }
-       return this;
+    public UsersPage generateUserFormat() {
+        visibleUserFormat.click();
+        String usersFormat = faker.options().option("F. Last name", "First name L.", "First name Last name",
+                "Last name F.", "Last name First name", "Username");
+        elementActions.input(userFormat, usersFormat);
+        return this;
     }
-    //TODO below method doesn't work
-    public boolean isSuccessMessageDisplayed() {
-        checkSaveBtn();
-        try {
-            return successMessage.isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
+    public UsersPage MoveToIcons(WebElement clickElement, WebElement icon) {
+        clickElement.click();
+        actions.moveToElement(icon).perform();
+        return this;
     }
 
-    public UsersPage checkCancelClick(){
-       if (cancelClick.isEnabled()){
-           cancelClick.click();
-       }
-       return this ;
-    }
-    public UsersPage logOut(){
-       logOutBtn.click();
-       return this;
-    }
 }
+

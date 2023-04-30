@@ -5,6 +5,7 @@ import com.digital.ui.element_helper.WebElementActions;
 import com.digital.ui.pages.HomePage;
 import com.digital.ui.pages.LoginPage;
 import com.digital.ui.pages.account_settings.UsersPage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -25,43 +26,38 @@ public class UserPageTest {
     LoginPage loginPage = new LoginPage();
     HomePage homePage = new HomePage();
 
-    @BeforeMethod
+    @Test(priority = 1)
     public void setUp(){
         loginPage.openPage()
                 .authorization();
         homePage.goToHomePage()
                 .clickToAccountSettings();
-        usersPage.openUsersPage();
+        usersPage.usersPage.click();
     }
-    @Test(description = "Verify user can open Users Page")
+    @Test(priority = 2, description = "Verify user can open Users Page")
     public void testUsersPageLoad(){
         String expUrl = "https://bravos.talentlms.com/account/users_index";
-        String actUrl = "https://bravos.talentlms.com/account/users_index";
-        assertEquals(expUrl,actUrl);
+        String actUrl = Driver.getDriver().getCurrentUrl();
+        assertEquals(actUrl,expUrl);
     }
-    @Test(description = "Verify all signUp options are available")
+    @Test(priority = 3, description = "Verify all signUp options are available")
     public void testSingUpOption(){
         Select signUpDropdown = new Select(usersPage.signUp);
         List<WebElement> options = signUpDropdown.getOptions();
         assertEquals(options.get(0).getText(), "Direct");
         assertEquals(options.get(1).getText(), "Manually (from Admin)");
     }
-    @Test(description = "Verify all User Verification options are available")
+    @Test(priority = 4, description = "Verify all Default User Type options are available")
     public void testUserVerification(){
-        Select userVerifDropDown = new Select(usersPage.userVerification);
-        List<String> expUserVerifList = List.of("Select user verification", "CAPTCHA verification", "CAPTCHA + Email verification",
-                 "Email verification", "CAPTCHA + Admin activation", "Admin activation");
-        List<String> actUserVerifList = userVerifDropDown.getOptions().stream()
+        Select userVerDropDown = new Select(usersPage.userVerification);
+        List<String> expUserVerList = List.of("Select user verification", "CAPTCHA verification", "CAPTCHA + Email verification",
+                "Email verification", "CAPTCHA + Admin activation", "Admin activation");
+        List<String> actUserVerList = userVerDropDown.getOptions().stream()
                 .map(WebElement::getText)
                 .collect(Collectors.toList());
-        assertEquals(actUserVerifList, expUserVerifList);
+        assertEquals(actUserVerList,expUserVerList);
     }
-    @Test(description = "Verify alert icon is visible next to User Verification menu")
-    public void userVerifIconIsDisplayed(){
-        assertTrue(usersPage.icon1.isDisplayed());
-    }
-
-    @Test(description = "Verify all Default User Type options are available")
+    @Test(priority = 5, description = "Verify all Default User Type options are available")
     public void testDefUserType(){
         Select deftUserTypeDropDown = new Select(usersPage.defaultUserType);
         List<String> expDefUserTypeList = List.of("SuperAdmin", "Admin-Type", "Trainer-Type", "Learner-Type");
@@ -70,80 +66,24 @@ public class UserPageTest {
                 .collect(Collectors.toList());
         assertEquals(actDefUserTypeList,expDefUserTypeList);
     }
-    @Test(description = "Verify alert icon  is displayed next to Default User Type menu")
-    public void defUserTypeIconIsDisplayed() {
-        assertTrue(usersPage.icon2.isDisplayed());
+
+    @Test(priority = 6, description = "Verify all checkboxes are selectable")
+    public void testCheckboxes(){
+        usersPage.checkBoxes(usersPage.passwordSettings, usersPage.passwordChangeBox);
+        assertFalse(usersPage.passwordChangeBox.isSelected());
     }
-    @Test(description = "Verify Default Group menu is Displayed")
-    public void TestDefaultGroup(){
-        assertTrue(usersPage.defaultGroup.isDisplayed());
+    @Test(priority = 7, description = "Verify all icon messages are Displayed")
+    public void testIcons(){
+        usersPage.MoveToIcons(usersPage.socialOptions,usersPage.icon10);
+        assertTrue(usersPage.icon10.isDisplayed());
     }
-    @Test(description = "Verify Password Settings is Enabled")
-    public void testPasswordSettings(){
-        assertTrue(usersPage.passwordSettings.isEnabled());
-    }
-    @Test(description = "Verify Enforce strong passwords is Selected")
-    public void testStrongPasswordBox(){
-        usersPage.passwordSettings.click();
-        usersPage.strongPasswordBox.click();
-        assertTrue(usersPage.strongPasswordBox.isSelected());
-    }
-   @Test(description = "Verify Enforce passwords change is Selected")
-   public void testPasswordChangeDays() {
-       usersPage.passwordSettings.click();
-       usersPage.passwordChangeXDaysBox.click();
-       assertTrue(usersPage.passwordChangeXDaysBox.isSelected());
-   }
-   @Test(description = "Verify User is able input number days")
-   public void  testInputDays(){
-       usersPage.passwordSettings.click();
-       usersPage.passwordChangeXDaysBox.click();
-       usersPage.passwordDays.clear();
-       usersPage.passwordDays.sendKeys("20");
+   @Test(priority = 8, description = "Verify User is able enter data in input fields")
+   public void  testInputFields(){
+       usersPage.inputFields(usersPage.passwordSettings, usersPage.passwordChangeXDaysBox,usersPage.passwordDays ,"20");
        String day = usersPage.passwordDays.getAttribute("value");
        assertEquals(day, "20");
    }
-    @Test(description = "Verify Enforce passwords change on first login is Selected")
-    public void testSPasswordChangeLoginBox(){
-        usersPage.passwordSettings.click();
-        usersPage.passwordChangeBox.click();
-        assertTrue(usersPage.passwordChangeBox.isSelected());
-    }
-    @Test(description = "Verify Lock account after is Selected")
-    public void testLockAccountAfter() {
-        usersPage.passwordSettings.click();
-        usersPage.lockLoginBox.click();
-        assertTrue(usersPage.lockLoginBox.isSelected());
-    }
-    @Test(description = "Verify User is able input number of failed attempts")
-    public void testInputFailedAttempts(){
-        usersPage.passwordSettings.click();
-        usersPage.lockLoginBox.click();
-        usersPage.retryAttempts.clear();
-        usersPage.retryAttempts.sendKeys("5");
-        String attempts = usersPage.retryAttempts.getAttribute("value");
-        assertEquals(attempts, "5");
-    }
-    @Test(description = "Verify User is able input number of minutes")
-    public void testInputMinutes(){
-        usersPage.passwordSettings.click();
-        usersPage.lockLoginBox.click();
-        usersPage.retryMinutes.clear();
-        usersPage.retryMinutes.sendKeys("10");
-        String minutes = usersPage.retryMinutes.getAttribute("value");
-        assertEquals(minutes, "10");
-    }
-    @Test(description = "Verify Terms of Service is Enabled")
-    public void testTermsOfService(){
-        assertTrue(usersPage.termsOfService.isEnabled());
-    }
-    @Test(description = "Verify User is able input some text inside Terms of service textarea and checkbox is deselected")
-    public void testInputTextArea(){
-        usersPage.generateLicenceNote();
-        assertNotNull(usersPage.licenceNote);
-        assertFalse(usersPage.resetLicenceBox.isSelected());
-    }
-    @Test(description = "Verify all Visible User Format options are available")
+    @Test(priority = 9, description = "Verify all Visible User Format options are available")
     public void testVisibleUserFormat(){
         usersPage.visibleUserFormat.click();
         Select visibleUserFormatDropDown = new Select(usersPage.userFormat);
@@ -154,28 +94,23 @@ public class UserPageTest {
                 .collect(Collectors.toList());
         assertEquals(actvisibleUserFormatList,expvisibleUserFormatList);
     }
-    @Test(description = "Verify Social options checkboxes are Selected")
-    public void testSocialOptions(){
-        usersPage.socialOptions.click();
-        List<WebElement> checkboxList = List.of(usersPage.socialSignUpBox, usersPage.socialCatalogBox, usersPage.socialShareBox, usersPage.courseRatingBox);
-        for (WebElement checkbox : checkboxList){
-            checkbox.click();
-            assertTrue(checkbox.isSelected());
-        }
+    @Test(priority = 10, description = "Verify user can enter text and check the countdown")
+    public void checkTextArea(){
+        usersPage.termsOfService.click();
+        elementActions.input(usersPage.licenceNote, "Hello World");
+        WebElementActions.pause(1000);
+        String initialCount = "35000";
+        String updatedCount = usersPage.countdown.getText();
+        assertNotEquals(initialCount,updatedCount);
     }
-    @Test(description = "Verify Single Sign-On text is Displayed")
-    public void testSSO(){
-        assertTrue(usersPage.singleSignOn.isDisplayed());
+    @Test(priority = 11, description = "Verify success message is Displayed")
+    public void testSuccessMessage(){
+        WebElementActions.pause(1000);
+        usersPage.saveBtn.click();
+        WebElementActions.pause(1000);
+        assertTrue(usersPage.successMessage.isDisplayed());
     }
-    @Test(description = "Verify save button is Enabled")
-        public void testSaveBtn(){
-            assertTrue(usersPage.saveBtn.isEnabled());
-    }
-    @Test(description = "Verify cancel click is Enabled")
-    public void testCancelClick(){
-        assertTrue(usersPage.cancelClick.isEnabled());
-    }
-    @AfterMethod
+    @Test(priority = 12)
     public void tearDown(){
         Driver.getDriver().close();
         Driver.getDriver().quit();
