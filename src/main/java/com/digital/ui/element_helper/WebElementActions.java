@@ -55,18 +55,6 @@ public class WebElementActions {
         return this;
     }
 
-    public WebElementActions moveToElement (WebElement element){
-        actions.moveToElement(element).perform();
-        return this;
-    }
-
-    public static void pause(Integer milliseconds){
-        try {
-            TimeUnit.MILLISECONDS.sleep(milliseconds);
-        }catch (InterruptedException e){
-            System.out.println("error seconds");
-        }
-    }
 
     public WebElementActions customAssertEquals(WebElement element, String str) {
         waitElementToBeDisplayed(element);
@@ -74,5 +62,27 @@ public class WebElementActions {
         return this;
     }
 
-
 }
+
+
+
+
+
+
+
+
+
+
+
+//    public WebElementActions moveToElement (WebElement element){
+//        actions.moveToElement(element).perform();
+//        return this;
+//    }
+//
+//    public static void pause(Integer milliseconds){
+//        try {
+//            TimeUnit.MILLISECONDS.sleep(milliseconds);
+//        }catch (InterruptedException e){
+//            System.out.println("error seconds");
+//        }
+//    }
