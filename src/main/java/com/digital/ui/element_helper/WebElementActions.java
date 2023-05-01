@@ -20,6 +20,7 @@ public class WebElementActions {
     Actions actions = new Actions(Driver.getDriver());
 
 
+
     public WebElementActions input(WebElement element,String txt){
         waitElementToBeDisplayed(element);
         element.sendKeys(txt);
@@ -62,15 +63,15 @@ public class WebElementActions {
         return this;
     }
 
+    public static void pause(Integer milliseconds){
+        try {
+            TimeUnit.MILLISECONDS.sleep(milliseconds);
+        }catch (InterruptedException e){
+            System.out.println("error seconds");
+        }
+    }
+
 }
-
-
-
-
-
-
-
-
 
 
 
@@ -78,11 +79,14 @@ public class WebElementActions {
 //        actions.moveToElement(element).perform();
 //        return this;
 //    }
-//
-//    public static void pause(Integer milliseconds){
-//        try {
-//            TimeUnit.MILLISECONDS.sleep(milliseconds);
-//        }catch (InterruptedException e){
-//            System.out.println("error seconds");
-//        }
-//    }
+
+
+
+
+
+
+
+
+
+
+
