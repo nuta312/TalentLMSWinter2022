@@ -8,13 +8,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.nio.file.WatchEvent;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 /**
  * @author Nursultan Musakunov
  */
+
 public class WebElementActions {
 
     Actions actions = new Actions(Driver.getDriver());
@@ -73,12 +73,6 @@ public class WebElementActions {
 
 }
 
-
-
-//    public WebElementActions moveToElement (WebElement element){
-//        actions.moveToElement(element).perform();
-//        return this;
-//    }
 
 
 
