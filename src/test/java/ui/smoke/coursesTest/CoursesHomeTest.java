@@ -3,6 +3,8 @@ package ui.smoke.coursesTest;
 import com.digital.annotations.TestCase;
 import com.digital.ui.pages.LoginPage;
 import com.digital.ui.pages.courses_page.CoursesHomePage;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -21,36 +23,56 @@ public class CoursesHomeTest {
     public void openAndLogin() {
         loginPage.openPage().authorization();
         coursesHomePage.openCoursesPage();
-
     }
 
-    @Test
-    @TestCase
-    public void reportCourseBtn() {
+    @Test (description = "Verify user can click Report Course button")
+    @Severity(SeverityLevel.CRITICAL)
+    @TestCase (id = 9)
+    public void reportingCourseAndAssert() {
         coursesHomePage.reportCourseBtnOnCoursePage();
     }
 
-    @Test
-    @TestCase
-    public void editCourseBtn() {
+    @Test (description = "Verify user can click Edit Course button")
+    @Severity(SeverityLevel.CRITICAL)
+    @TestCase (id = 10)
+    public void editingCourseAndAssert() {
         coursesHomePage.editCourseBtnOnCoursePage();
     }
 
-    @Test
-    @TestCase
-    public void cloneCourseBtn() {
+    @Test (description = "Verify user can click Clone Course button")
+    @Severity(SeverityLevel.CRITICAL)
+    @TestCase (id = 11)
+    public void cloningCourseAndAssert() {
         coursesHomePage.cloneCourseBtnOnCoursePage();
     }
 
-    @Test
-    @TestCase
-    public void deletingCourseBtn() {
-        coursesHomePage.deletingCourseBtnOnCoursePage();
+    @Test (description = "Verify user can click Confirm Clone Course button")
+    @Severity(SeverityLevel.CRITICAL)
+    @TestCase (id = 12)
+    public void confirmCloneAndAssert() {
+        coursesHomePage.cloneCourseBtnOnCoursePage();
+        coursesHomePage.confirmClone();
     }
 
-    @Test
-    @TestCase
-    public void viewCourseBtn() {
+    @Test (description = "Verify user can click Delete Course button")
+    @Severity(SeverityLevel.CRITICAL)
+    @TestCase (id = 13)
+    public void deletingCourseAndAssert() {
+        coursesHomePage.deleteCourseBtnOnCoursePage();
+    }
+
+    @Test (description = "Verify user can click Confirm Delete Course button")
+    @Severity(SeverityLevel.CRITICAL)
+    @TestCase (id = 14)
+    public void confirmDeletionAndAssert() {
+        coursesHomePage.deleteCourseBtnOnCoursePage();
+        coursesHomePage.confirmDeletion();
+    }
+
+    @Test (description = "Verify user can click View Course button")
+    @Severity(SeverityLevel.CRITICAL)
+    @TestCase (id = 15)
+    public void viewCourseBtnAndAssert() {
         coursesHomePage.viewCourseBtnOnCoursePage();
     }
 }

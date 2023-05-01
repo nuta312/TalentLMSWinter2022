@@ -40,6 +40,7 @@ public class AddCoursePageTest extends BaseUiTest{
         addCoursePage.addingNewCourse();
     }
 
+
     @Test(description = "Verify user can add course with valid credentials")
     @Story("As a user i should be able to add new course")
     @Severity(SeverityLevel.CRITICAL)

@@ -69,6 +69,7 @@ public class WebElementActions {
     }
 
     public WebElementActions customAssertEquals(WebElement element, String str) {
+        waitElementToBeDisplayed(element);
         Assert.assertEquals(element.getText(), str);
         return this;
     }

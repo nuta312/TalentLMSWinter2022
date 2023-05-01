@@ -4,7 +4,12 @@ public enum AddCourse {
     SAMPLES("Samples"),
     TITLE("Home / Courses / Add course"),
     COURSES_TITLE("Home / Courses"),
-    ERROR_INLINE("'Course name' is required");
+    ERROR_INLINE("'Course name' is required"),
+    REPORTS_RESULT("Home / Reports / Course reports / "),
+    EDIT_RESULT("Home / Courses / "),
+    CLONE_TITLE("Clone"),
+    DELETE_TITLE("Delete Course?"),
+    HOME_RESULT("Home / Courses");
 
     String value;
 
