@@ -19,6 +19,8 @@ public abstract class BaseUiTest implements DriverActions {
         driver = Driver.getDriver();
     }
 
+
+
     @AfterClass
     public void tearDown() {
         Driver.closeDriver();
