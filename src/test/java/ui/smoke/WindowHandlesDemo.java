@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 
 public class WindowHandlesDemo {
 
-    public static void main(String[] args) throws IllegalAccessException {
+    public static void main(String[] args)  {
 
 
         BrowserHelper browserHelper = new BrowserHelper();
