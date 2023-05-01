@@ -1,0 +1,15 @@
+com/digital/ui/pages/AzizasTask.class
+com/digital/ui/pages/LoginPage.class
+com/digital/config/ConfigReader.class
+com/digital/enums/Cars.class
+com/digital/utils/FakeDataProvider.class
+com/digital/ui/pages/PracticeFormPage.class
+com/digital/ui/driver/ChromeWebDriver.class
+com/digital/ui/element_helper/WebElementActions.class
+com/digital/annotations/TestCase.class
+com/digital/ui/driver/Driver.class
+com/digital/ui/driver/Waits.class
+com/digital/ui/pages/BasePage.class
+com/digital/ui/driver/DriverActions.class
+com/digital/ui/driver/EdgeWebDriver.class
+com/digital/ui/pages/ExpediaHomePage.class
