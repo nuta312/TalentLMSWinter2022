@@ -8,36 +8,37 @@ import java.util.Set;
 public class BrowserHelper {
     WebDriver driver = Driver.getDriver();
 
-    public void open(final String URL) {
+    public void open(final String URL){
         driver.navigate().to(URL);
     }
 
-    public void goBack() {
-        driver.navigate().back();
-    }
-
-    public void goForward() {
+    public void goBack(){
         driver.navigate().forward();
     }
 
-    public void refresh() {
+    public  void goForward(){
         driver.navigate().refresh();
     }
 
-    public Set<String> getWindowHandles() {
+    public void refresh(){
+        driver.navigate().refresh();
+    }
+
+    public Set<String> getWindowHandles(){
         return driver.getWindowHandles();
     }
 
-    public void switchToWindow(int index) throws IllegalAccessException {
-        LinkedList<String> windowId = new LinkedList<>(getWindowHandles());
-        if (index < 0 || index > windowId.size()) {
-            throw new IllegalAccessException("Invalid index: " + index);
-//            driver.switchTo().window(windowId.get(index));
-        }
+    public void switchToWindow(int index){
+        LinkedList<String> windowID = new LinkedList<>(getWindowHandles());
 
+        if(index < 0 || index > windowID.size()){
+            throw new IllegalArgumentException("invalid index" + index);
+        }
+        driver.switchTo().window(windowID.get(index));
     }
 
-
-    public void switchToParentWindow() {
+    public void switchToParentWindow(){
+        LinkedList<String> windowID = new LinkedList<>(getWindowHandles());
+        driver.switchTo().window(windowID.get(0));
     }
 }
