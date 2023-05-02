@@ -1,9 +1,10 @@
-package ui;
+package ui.smoke;
 
 import com.digital.annotations.TestCase;
 import com.digital.ui.pages.AddAndUpdateGroupPage;
 import io.qameta.allure.*;
 import org.testng.annotations.*;
+import ui.BaseUiTest;
 
 public class AddAndUpdateGroupPageTest extends BaseUiTest {
 

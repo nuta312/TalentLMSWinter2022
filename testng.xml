@@ -3,7 +3,7 @@
 <suite name="All tests">
     <test name="Regression Tests">
         <classes>
-            <class name="ui.AddAndUpdateGroupPageTest"></class>
+            <class name="ui.smoke.AddAndUpdateGroupPageTest"></class>
         </classes>
     </test>
 </suite>
