@@ -6,20 +6,33 @@ import java.util.LinkedList;
 import java.util.Set;
 
 public class BrowserHelper {
+<<<<<<< HEAD
 
     WebDriver driver = Driver.getDriver();
 
 
+=======
+    WebDriver driver = Driver.getDriver();
+
+>>>>>>> origin/AigerimDzh
     public void open(final String URL){
         driver.navigate().to(URL);
     }
 
     public void goBack(){
+<<<<<<< HEAD
         driver.navigate().back();
     }
 
     public void goForward(){
         driver.navigate().forward();
+=======
+        driver.navigate().forward();
+    }
+
+    public  void goForward(){
+        driver.navigate().refresh();
+>>>>>>> origin/AigerimDzh
     }
 
     public void refresh(){
@@ -31,6 +44,7 @@ public class BrowserHelper {
     }
 
     public void switchToWindow(int index){
+<<<<<<< HEAD
         LinkedList<String> windowId = new LinkedList<>(getWindowHandles());
 
         if (index < 0 || index > windowId.size())
@@ -48,4 +62,23 @@ public class BrowserHelper {
         driver.switchTo().window(windowId.get(0));
     }
 
+=======
+        LinkedList<String> windowID = new LinkedList<>(getWindowHandles());
+
+        if(index < 0 || index > windowID.size()){
+            throw new IllegalArgumentException("invalid index" + index);
+        }
+
+        driver.switchTo().window(windowID.get(index));
+    }
+
+    public void switchToParentWindow(){
+        LinkedList<String> windowID = new LinkedList<>(getWindowHandles());
+        driver.switchTo().window(windowID.get(0));
+    }
+
+
+
+
+>>>>>>> origin/AigerimDzh
 }

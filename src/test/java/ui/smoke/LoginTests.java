@@ -23,6 +23,11 @@ public class LoginTests extends BaseUiTest {
 
         Driver.getDriver().get("https://www.google.com/");
         System.out.println("This is example test");
+<<<<<<< HEAD
         Assert.assertTrue(true);
+=======
+        Assert.assertTrue(false);
+
+>>>>>>> origin/AigerimDzh
     }
 }
