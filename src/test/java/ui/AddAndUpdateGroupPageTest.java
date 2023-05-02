@@ -123,7 +123,5 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
                 .assertCondition(group.expectedPrice.getText().contains("$100.00"));
 
 
-
-
     }
 }
