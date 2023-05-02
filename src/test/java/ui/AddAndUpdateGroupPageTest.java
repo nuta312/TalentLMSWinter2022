@@ -10,7 +10,7 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
     AddAndUpdateGroupPage group = new AddAndUpdateGroupPage();
 
 
-    @Test(description = "Verify a user can add a new group")
+    @Test(priority= 1,description = "Verify a user can add a new group")
     @TestCase(id = 001)
     @Severity(SeverityLevel.BLOCKER)
     @Owner("Aigerim Dzhanybekova")
@@ -46,7 +46,7 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
     }
 
 
-    @Test(description = "Verify user can add group by filling only 'Name' field")
+    @Test(priority=2, description = "Verify user can add group by filling only 'Name' field")
     @TestCase(id = 002)
     @Severity(SeverityLevel.CRITICAL)
     @Owner("Aigerim Dzhanybekova")
@@ -57,7 +57,7 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
 
 
         group.openPage();
-        group.authorization();
+
         group.addNewGroup()
                 .inputNameOfGroup("Digital nomads")
                 .submitGroup()
@@ -70,7 +70,7 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
 
     }
 
-    @Test(description = "Verify user cannot add group without filling a 'Name' field")
+    @Test(priority=3,description = "Verify user cannot add group without filling a 'Name' field")
     @TestCase(id = 003)
     @Severity(SeverityLevel.TRIVIAL)
     @Owner("Aigerim Dzhanybekova")
@@ -82,7 +82,7 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
 
 
         group.openPage();
-        group.authorization();
+
         group.addNewGroup()
                 .inputNameOfGroup("")
                 .inputDescription("Hi there")
@@ -96,7 +96,7 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
     }
 
 
-    @Test(description = "Verify a user can update group")
+    @Test(priority=4, description = "Verify a user can update group")
     @TestCase(id = 004)
     @Severity(SeverityLevel.NORMAL)
     @Owner("Aigerim Dzhanybekova")
@@ -108,15 +108,13 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
 
 
         group.openPage();
-        group.authorization();
+
         group.displayGroupList()
                 .editGroup()
                 .inputDescription("Here we learn Java")
                 .inputKey("89658")
                 .inputPrice("100")
                 .submitGroup();
-
-       
 
         group.assertCondition(group.expectedName.getText().contains("Digital nomads"))
                 .assertCondition(group.expectedDescription.getText().contains("Here we learn Java"))
