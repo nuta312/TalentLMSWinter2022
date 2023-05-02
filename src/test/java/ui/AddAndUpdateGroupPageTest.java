@@ -3,14 +3,15 @@ package ui;
 import com.digital.annotations.TestCase;
 import com.digital.ui.pages.AddAndUpdateGroupPage;
 import io.qameta.allure.*;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class AddAndUpdateGroupPageTest extends BaseUiTest {
 
     AddAndUpdateGroupPage group = new AddAndUpdateGroupPage();
 
 
-    @Test(priority= 1,description = "Verify a user can add a new group")
+
+    @Test(priority=1, description = "Verify a user can add a new group")
     @TestCase(id = 001)
     @Severity(SeverityLevel.BLOCKER)
     @Owner("Aigerim Dzhanybekova")
@@ -46,7 +47,7 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
     }
 
 
-    @Test(priority=2, description = "Verify user can add group by filling only 'Name' field")
+    @Test(priority=2,description = "Verify user can add group by filling only 'Name' field")
     @TestCase(id = 002)
     @Severity(SeverityLevel.CRITICAL)
     @Owner("Aigerim Dzhanybekova")
@@ -57,7 +58,6 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
 
 
         group.openPage();
-
         group.addNewGroup()
                 .inputNameOfGroup("Digital nomads")
                 .submitGroup()
@@ -82,7 +82,6 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
 
 
         group.openPage();
-
         group.addNewGroup()
                 .inputNameOfGroup("")
                 .inputDescription("Hi there")
@@ -108,7 +107,6 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
 
 
         group.openPage();
-
         group.displayGroupList()
                 .editGroup()
                 .inputDescription("Here we learn Java")
@@ -122,4 +120,5 @@ public class AddAndUpdateGroupPageTest extends BaseUiTest {
 
 
     }
+
 }
