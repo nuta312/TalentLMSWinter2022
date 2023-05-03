@@ -34,7 +34,6 @@ public class BrowserHelper {
         if(index < 0 || index > windowID.size()){
             throw new IllegalArgumentException("invalid index" + index);
         }
-
         driver.switchTo().window(windowID.get(index));
     }
 
@@ -42,8 +41,4 @@ public class BrowserHelper {
         LinkedList<String> windowID = new LinkedList<>(getWindowHandles());
         driver.switchTo().window(windowID.get(0));
     }
-
-
-
-
 }

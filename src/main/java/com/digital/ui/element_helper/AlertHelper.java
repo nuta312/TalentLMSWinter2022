@@ -1,6 +1,5 @@
 package com.digital.ui.element_helper;
 
-import com.beust.ah.A;
 import com.digital.ui.driver.Driver;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.NoAlertPresentException;
@@ -43,6 +42,4 @@ public class AlertHelper {
         }
         return false;
     }
-
-
 }
