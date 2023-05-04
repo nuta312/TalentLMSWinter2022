@@ -1,9 +1,8 @@
 package com.digital.ui.pages;
 
-import com.digital.ui.driver.Driver;
-import org.openqa.selenium.support.PageFactory;
+import com.digital.ui.pages.basePage.BasePage;
 
-public class PracticeFormPage extends BasePage{
+public class PracticeFormPage extends BasePage {
 
 
 
