@@ -13,7 +13,6 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 
-@Listeners(ScreenshotListener.class)
 
 public abstract class BaseUiTest implements DriverActions {
 
@@ -30,6 +29,7 @@ public abstract class BaseUiTest implements DriverActions {
     public void setUp() {
         driver = Driver.getDriver();
         driver.navigate().to("https://dmc312.talentlms.com/index");
+        driver = Driver.getDriver();
         loginPage = new LoginPage();
         homePage = new HomePage();
         filesPage = new FilesPage();

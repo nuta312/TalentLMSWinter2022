@@ -1,5 +1,6 @@
 package com.digital.ui.driver;
 
+import com.digital.config.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -14,6 +15,10 @@ public class FirefoxWebDriver {
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--disable-extencions");
         options.addArguments("--no-sandbox");
+
+//        if(Boolean.parseBoolean(ConfigReader.getProperty("headless"))){
+//            options.addArguments("--headless");
+//        }
 
         WebDriver driver = new FirefoxDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));

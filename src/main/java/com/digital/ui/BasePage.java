@@ -10,6 +10,4 @@ public abstract class BasePage {
     public void BasePage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
-
-
 }
