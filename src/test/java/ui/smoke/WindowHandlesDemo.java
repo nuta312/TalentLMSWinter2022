@@ -25,6 +25,4 @@ public class WindowHandlesDemo {
         browserHelper.switchToParentWindow();
         WebElementActions.pause(2000);
     }
-
-
 }

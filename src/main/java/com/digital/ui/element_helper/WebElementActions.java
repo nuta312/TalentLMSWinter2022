@@ -6,8 +6,10 @@ import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -17,9 +19,14 @@ import java.util.concurrent.TimeoutException;
 /**
  * @author Nursultan Musakunov
  */
+
 public class WebElementActions {
 
+
     private static Logger logger = LogManager.getLogger(WebElementActions.class);
+
+    Actions actions = new Actions(Driver.getDriver());
+
 
 
     public WebElementActions input(WebElement element,String txt){
@@ -39,13 +46,13 @@ public class WebElementActions {
     }
 
     public WebElementActions waitElementToBeDisplayed(WebElement element){
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(7))
-                .until(ExpectedConditions.visibilityOf(element));
+        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20))
+            .until(ExpectedConditions.visibilityOf(element));
         return this;
     }
 
     public WebElementActions waitElementToBeClickAble(WebElement element){
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15))
+        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(40))
                 .until(ExpectedConditions.elementToBeClickable(element));
         return this;
     }
@@ -62,6 +69,20 @@ public class WebElementActions {
         return this;
     }
 
+
+    public WebElementActions pressUpAndEnter(WebElement element){
+        waitElementToBeClickAble(element);
+        element.sendKeys(Keys.UP,Keys.ENTER);
+        return this;
+    }
+
+
+    public WebElementActions customAssertEquals(WebElement element, String str) {
+        waitElementToBeDisplayed(element);
+        Assert.assertEquals(element.getText(), str);
+        return this;
+    }
+
     public static void pause(Integer milliseconds){
         try {
             TimeUnit.MILLISECONDS.sleep(milliseconds);
@@ -69,8 +90,16 @@ public class WebElementActions {
             System.out.println("error seconds");
         }
     }
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
