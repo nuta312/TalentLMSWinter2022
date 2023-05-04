@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.digital</groupId>
-    <artifactId>Winter2022TAF</artifactId>
+    <artifactId>TalentLMSWinter2022</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
@@ -69,6 +69,7 @@
             </exclusions>
         </dependency>
 
+
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
@@ -76,6 +77,13 @@
             <version>${aspectj.version}</version>
             <scope>runtime</scope>
         </dependency>
+
+        <dependency>
+            <groupId>com.mailosaur</groupId>
+            <artifactId>mailosaur-java</artifactId>
+            <version>7.12.0</version>
+        </dependency>
+
 
 
     </dependencies>
@@ -94,5 +102,7 @@
             </plugin>
         </plugins>
     </build>
+
+
 
 </project>
