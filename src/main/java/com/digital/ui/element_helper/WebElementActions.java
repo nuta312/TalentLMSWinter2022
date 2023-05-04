@@ -1,6 +1,8 @@
 package com.digital.ui.element_helper;
 
 import com.digital.ui.driver.Driver;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -20,19 +22,26 @@ import java.util.concurrent.TimeoutException;
 
 public class WebElementActions {
 
+
+    private static Logger logger = LogManager.getLogger(WebElementActions.class);
+
     Actions actions = new Actions(Driver.getDriver());
 
 
 
     public WebElementActions input(WebElement element,String txt){
+        logger.warn("I'm trying to write " + txt + " " + element);
         waitElementToBeDisplayed(element);
         element.sendKeys(txt);
+        logger.info("Succesfully write");
         return this;
     }
 
     public WebElementActions press(WebElement element){
+        logger.warn("Trying to click the " + element);
         waitElementToBeDisplayed(element);
         element.click();
+        logger.info("Successfully clicked");
         return this;
     }
 
