@@ -15,8 +15,6 @@ public class LoginVenera  extends BasePage{
     public WebElement password;
     @FindBy(name = "submit")
     public WebElement BtnLogin;
-    @FindBy(xpath = "//div[@class=\"d-row align-items-stretch\"]//div[4]/a")
-    public WebElement elementAdmin;
 
     public LoginVenera  openPage() {
         Driver.getDriver().get("https://venera.talentlms.com/index");
@@ -30,9 +28,4 @@ public class LoginVenera  extends BasePage{
         BtnLogin.click();
         return this;
     }
-
-
-
-
-
 }
