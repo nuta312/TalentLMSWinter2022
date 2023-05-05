@@ -1,5 +1,9 @@
 package com.digital.ui.pages;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> db3f167 (New commit)
 import com.digital.ui.driver.Driver;
 import com.digital.ui.element_helper.WebElementActions;
 import org.openqa.selenium.By;
@@ -10,11 +14,18 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
+<<<<<<< HEAD
 
 import static org.testng.AssertJUnit.assertTrue;
 
 
 public class AddAndUpdateGroupPage extends LoginPage {
+=======
+import static org.testng.AssertJUnit.assertTrue;
+
+public class AddAndUpdateGroupPage extends BasePage{
+
+>>>>>>> db3f167 (New commit)
 
     public WebElementActions elementActions = new WebElementActions();
 
@@ -72,11 +83,14 @@ public class AddAndUpdateGroupPage extends LoginPage {
     public WebElement groupList;
 
 
+<<<<<<< HEAD
     public AddAndUpdateGroupPage openPage(){
         driver.get("https://aigerim3110.talentlms.com/dashboard");
         return this;
     }
 
+=======
+>>>>>>> db3f167 (New commit)
 
     public AddAndUpdateGroupPage addNewGroup(){
         addGroupBtn.click();
@@ -121,7 +135,10 @@ public class AddAndUpdateGroupPage extends LoginPage {
 
         Actions action = new Actions(Driver.getDriver());
         action.moveToElement(textLine).perform();
+<<<<<<< HEAD
 
+=======
+>>>>>>> db3f167 (New commit)
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         editPencil = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//i[@title='Edit'])[1]")));
         editPencil.click();
@@ -139,4 +156,9 @@ public class AddAndUpdateGroupPage extends LoginPage {
         return this;
     }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> db3f167 (New commit)
 }

@@ -1,0 +1,28 @@
+[WARN ] 2023-05-05 15:27:38.411 [main] WebElementActions - I'm trying to write nuta1bema [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> name: login]
+[INFO ] 2023-05-05 15:27:38.701 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:27:38.722 [main] WebElementActions - I'm trying to write nuta1bema [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> name: password]
+[INFO ] 2023-05-05 15:27:38.867 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:27:46.458 [main] WebElementActions - I'm trying to write QA [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //input[@name='name']]
+[INFO ] 2023-05-05 15:27:46.798 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:27:46.810 [main] WebElementActions - I'm trying to write This group for QA automation engineers [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //textarea[@name='description']]
+[INFO ] 2023-05-05 15:27:47.769 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:27:48.684 [main] WebElementActions - I'm trying to write 123 [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //input[@name='group_key']]
+[INFO ] 2023-05-05 15:27:48.933 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:27:49.616 [main] WebElementActions - I'm trying to write 1000 [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //input[@name='price']]
+[INFO ] 2023-05-05 15:27:49.848 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:28:02.610 [main] WebElementActions - I'm trying to write Digital nomads [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //input[@name='name']]
+[INFO ] 2023-05-05 15:28:02.707 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:28:09.409 [main] WebElementActions - I'm trying to write  [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //input[@name='name']]
+[INFO ] 2023-05-05 15:28:09.529 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:28:09.556 [main] WebElementActions - I'm trying to write Hi there [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //textarea[@name='description']]
+[INFO ] 2023-05-05 15:28:09.647 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:28:10.211 [main] WebElementActions - I'm trying to write 25416 [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //input[@name='group_key']]
+[INFO ] 2023-05-05 15:28:10.633 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:28:11.253 [main] WebElementActions - I'm trying to write 144 [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //input[@name='price']]
+[INFO ] 2023-05-05 15:28:11.308 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:28:16.461 [main] WebElementActions - I'm trying to write Here we learn Java [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //textarea[@name='description']]
+[INFO ] 2023-05-05 15:28:16.589 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:28:16.960 [main] WebElementActions - I'm trying to write 89658 [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //input[@name='group_key']]
+[INFO ] 2023-05-05 15:28:17.317 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-05 15:28:17.573 [main] WebElementActions - I'm trying to write 100 [[ChromeDriver: chrome on MAC (fe3890ec4c99de9fa1e2dccf6674a9cd)] -> xpath: //input[@name='price']]
+[INFO ] 2023-05-05 15:28:17.630 [main] WebElementActions - Succesfully write
