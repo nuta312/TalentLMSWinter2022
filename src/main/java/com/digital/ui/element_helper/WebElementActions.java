@@ -14,11 +14,6 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 
-
-/**
- * @author Nursultan Musakunov
- */
-
 public class WebElementActions {
 
 
@@ -81,16 +76,6 @@ public class WebElementActions {
         Assert.assertEquals(element.getText(), str);
         return this;
     }
-
-    public static void pause(Integer milliseconds){
-        try {
-            TimeUnit.MILLISECONDS.sleep(milliseconds);
-        }catch (InterruptedException e){
-            System.out.println("error seconds");
-        }
-    }
-}
-
 
 
     public static void pause(Integer milliseconds){
