@@ -11,7 +11,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-  /**
+import java.util.ArrayList;
+import java.util.List;
+
+/**
   * @author Kubanych
   **/
 public class BuyCoursesPage extends BasePage{
@@ -37,7 +40,13 @@ public class BuyCoursesPage extends BasePage{
     @FindBy(xpath = "//a[text()='return to TalentLibrary']")
     public WebElement returnLinkBtn;
 
+    @FindBy(xpath = "//ul[@class='dynatree-container']")
+    WebElement rightCollections;
+
     // Elements For Assert
+
+    @FindBy(xpath = "(//li[@id='dynatree-id-92']//span//span)[2]")
+    public WebElement checkBusinessSkill;
 
     @FindBy(xpath = "//span[text()='What is Machine Learning?']")
     public WebElement machineLearnText;
@@ -45,8 +54,8 @@ public class BuyCoursesPage extends BasePage{
     @FindBy(xpath = "(//span[text()='What is Machine Learning? '])[2]")
     public WebElement enteredMachineText;
 
-    @FindBy(xpath = "//span[text()='You and Your Boss']")
-    public WebElement checkOtherCur;
+    @FindBy(xpath = "//span[text()='Preventing Discrimination & Harassment: CA Employee']")
+    public WebElement checkOtherPreventing;
 
     ////////////////////////////////////////////////////
     // Other Course Providers page
@@ -70,6 +79,23 @@ public class BuyCoursesPage extends BasePage{
     public WebElement goToCourses;
 
 
+    public  List<String> getCollections(){
+        List<WebElement> lists = Driver.getDriver().findElements(By.xpath("//ul[@class='dynatree-container']"));
+        List<String> elements = new ArrayList<>();
+
+        int count = 0;
+        for (WebElement e : lists) {
+            elements.add(e.getText());
+         //   System.out.println(e.getText());
+            count++;
+
+        }
+        System.out.println(count);
+        System.out.println(elements.size() + " element's size" );
+        return elements;
+    }
+
+
     public BuyCoursesPage goTO() throws InterruptedException {
         actions.moveToElement(GO_TO).perform();
         Thread.sleep(1000);
@@ -87,20 +113,21 @@ public class BuyCoursesPage extends BasePage{
     }
 
     public BuyCoursesPage searchAndFindCourse() {
+     //   elementActions.input(searchCourseInputField, Courses.MACHINE_COURSE.getCourse());
         searchCourseInputField.sendKeys(Courses.MACHINE_COURSE.getCourse());
-
         return this;
     }
 
     public BuyCoursesPage pressMachineCourse(){
-        machineLearningCourse.click();
+        elementActions.press(machineLearningCourse);
+    //    machineLearningCourse.sendKeys(Keys.ENTER);
         return this;
     }
 
     public BuyCoursesPage pressReturnLinkBtn(){
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollBy(0,500)");
-        returnLinkBtn.click();
+        returnLinkBtn.sendKeys(Keys.ENTER);
         return this;
     }
 
@@ -132,9 +159,6 @@ public class BuyCoursesPage extends BasePage{
         elementActions.input(inputBuildingCareerCrse, courseName);
         return this;
     }
-
-
-
 
 
 }

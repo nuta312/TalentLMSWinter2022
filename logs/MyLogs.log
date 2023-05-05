@@ -1,0 +1,10 @@
+[WARN ] 2023-05-05 11:37:58.943 [main] WebElementActions - I am trying to write kubanych [[ChromeDriver: chrome on WINDOWS (da30af0bac956032680da9890c55d882)] -> name: login]
+[INFO ] 2023-05-05 11:37:59.222 [main] WebElementActions - Successfully write
+[WARN ] 2023-05-05 11:37:59.239 [main] WebElementActions - I am trying to write kubanazar89 [[ChromeDriver: chrome on WINDOWS (da30af0bac956032680da9890c55d882)] -> name: password]
+[INFO ] 2023-05-05 11:37:59.391 [main] WebElementActions - Successfully write
+[WARN ] 2023-05-05 11:38:04.929 [main] WebElementActions - Trying to click the [[ChromeDriver: chrome on WINDOWS (da30af0bac956032680da9890c55d882)] -> xpath: //a[text()='Buy courses']]
+[INFO ] 2023-05-05 11:38:27.217 [main] WebElementActions - Successfully clicked the Proxy element for: DefaultElementLocator 'By.xpath: //a[text()='Buy courses']'
+[WARN ] 2023-05-05 11:38:29.779 [main] WebElementActions - Trying to click the [[ChromeDriver: chrome on WINDOWS (da30af0bac956032680da9890c55d882)] -> xpath: //tbody[@class='listMarketplace']]
+[INFO ] 2023-05-05 11:38:54.950 [main] WebElementActions - Successfully clicked the Proxy element for: DefaultElementLocator 'By.xpath: //tbody[@class='listMarketplace']'
+[WARN ] 2023-05-05 11:38:58.445 [main] WebElementActions - I am trying to write Building Your Career [[ChromeDriver: chrome on WINDOWS (da30af0bac956032680da9890c55d882)] -> xpath: //label[@class='tl-can-clear-input']]
+[INFO ] 2023-05-05 11:38:58.643 [main] WebElementActions - Successfully write

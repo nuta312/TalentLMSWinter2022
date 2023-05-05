@@ -4,9 +4,13 @@ import com.digital.annotations.TestCase;
 import com.digital.ui.driver.Driver;
 import io.qameta.allure.*;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ui.BaseUiTest;
+
+import java.util.List;
 
 @Epic("Login")
 @Feature("Login functionality")
@@ -22,12 +26,16 @@ public class LoginTests extends BaseUiTest {
     public void loginWithValidCredentialsTest() {
 
         Driver.getDriver().get("https://demoqa.com/webtables");
-        System.out.println("This is example test");
-        Assert.assertTrue(false);
+        WebElement e = Driver.getDriver().findElement(By.id("addNewRecordButton"));
+        List<WebElement> names = Driver.getDriver().findElements(By.xpath("//div[@class='rt-tbody']/div/div/div[1]"));
+        for(WebElement b : names) {
+            System.out.println(b.getText());
+        }
+
     }
 }
 
-   // Улан Байке надо понимать что в структуре таблицы с тегами TR и TD/// TR - строка TD - столбец
+
 
 
 
