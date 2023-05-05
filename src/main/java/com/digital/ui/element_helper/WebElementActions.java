@@ -1,23 +1,35 @@
 package com.digital.ui.element_helper;
 
 import com.digital.ui.driver.Driver;
-import org.apache.logging.log4j.LogManager;
+
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.openqa.selenium.By;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
-import java.net.MalformedURLException;
+
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+
+
 
 /**
  * @author Nursultan Musakunov
  */
+
 public class WebElementActions {
 
     private static Logger logger = LogManager.getLogger(WebElementActions.class);
+
+    public static void pause(int i) {
+    }
+
 
 
     public WebElementActions input(WebElement element,String txt) {
@@ -48,6 +60,13 @@ public class WebElementActions {
         return this;
     }
 
+
+    public WebElementActions waitElementToBeDisplayedLocated(WebElement element,String locator){
+        new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(7))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+        return this;
+    }
+
     public WebElementActions pressDownAndEnter(WebElement element){
         element.sendKeys(Keys.DOWN,Keys.ENTER);
         return this;
@@ -72,6 +91,21 @@ public class WebElementActions {
     }
 
 
+    public WebElementActions pressUpAndEnter(WebElement element){
+        waitElementToBeClickAble(element);
+        element.sendKeys(Keys.UP,Keys.ENTER);
+        return this;
+    }
+
+
+    public WebElementActions customAssertEquals(WebElement element, String str) {
+        waitElementToBeDisplayed(element);
+        Assert.assertEquals(element.getText(), str);
+        return this;
+    }
+
+
 }
+
 
 

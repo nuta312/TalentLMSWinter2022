@@ -1,3 +1,4 @@
+
 package com.digital.ui.pages;
 
 import com.digital.config.ConfigReader;
@@ -32,3 +33,4 @@ public class LoginPage extends BasePage{
         return this;
     }
 }
+

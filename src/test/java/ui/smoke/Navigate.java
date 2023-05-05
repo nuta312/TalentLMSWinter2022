@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package ui.smoke;
 
 import com.digital.ui.driver.Driver;
@@ -21,3 +22,20 @@ public class Navigate {
     }
 
 }
+=======
+package ui.smoke;
+
+import com.digital.ui.driver.Driver;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import ui.BaseUiTest;
+
+public class Navigate extends BaseUiTest {
+
+    public static void main(String[] args) {
+
+        Driver.getDriver().navigate().to("https://demoqa.com/alerts");
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+    }
+}
+>>>>>>> master

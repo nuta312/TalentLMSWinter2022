@@ -1,3 +1,4 @@
+
 package com.digital.ui.pages;
 
 import org.openqa.selenium.WebElement;
@@ -22,3 +23,4 @@ public class HomePage extends BasePage{
 
 
 }
+
