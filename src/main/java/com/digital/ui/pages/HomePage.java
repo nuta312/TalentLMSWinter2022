@@ -25,3 +25,4 @@ public class HomePage extends BasePage {
     public HomePage clickToAccountSettings(){
         accountSettings.click();
 }
+}
