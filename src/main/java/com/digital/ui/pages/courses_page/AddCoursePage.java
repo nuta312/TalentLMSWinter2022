@@ -4,7 +4,9 @@ import static com.digital.enums.AddCourse.ERROR_INLINE;
 import static com.digital.enums.AddCourse.COURSES_TITLE;
 import static com.digital.enums.AddCourse.SAMPLES;
 import static com.digital.enums.AddCourse.TITLE;
+import static com.digital.utils.FakeDataProvider.faker;
 
+import com.digital.ui.element_helper.WebElementActions;
 import com.digital.ui.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +19,8 @@ import java.util.Random;
  */
 
 public class AddCoursePage extends BasePage {
+    WebElementActions elementActions ;
+
     @FindBy(xpath = "//a[text()='Add course']")
     public WebElement addCourseBtn;
 
@@ -80,6 +84,7 @@ public class AddCoursePage extends BasePage {
 
 
     public AddCoursePage saveNewCourse() {
+
         elementActions.press(dropdown);
         elementActions.pressUpAndEnter(saveBtn);
         return this;

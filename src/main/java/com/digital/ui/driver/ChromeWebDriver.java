@@ -20,8 +20,6 @@ public class ChromeWebDriver implements  Waits{
 
         if(Boolean.getBoolean(ConfigReader.getProperty("headless"))){
 
-
-
         }
 
         driver = new ChromeDriver(options);

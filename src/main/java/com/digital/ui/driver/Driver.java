@@ -23,8 +23,15 @@ public class Driver {
                 case "edge":
                     driver = EdgeWebDriver.loadEdgeDriver();
                     break;
+
+               /* case "safari":
+                    driver = */
+                case "sauce_windows_chrome":
+                    driver = SauceLabsWindowsChrome.loadSauceLabWindowsChromeDriver();
+
                 case "firefox":
                     driver = FirefoxWebDriver.loadFirefoxDriver();
+
                     break;
                 case  "sauce_mac_safari":
                     driver = SauceLabsMacFireFox.loadSauceMacFireFoxDriver();

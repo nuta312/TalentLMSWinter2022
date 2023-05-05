@@ -1,3 +1,4 @@
+
 package com.digital.ui.pages;
 
 import com.digital.config.ConfigReader;
@@ -8,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage{
 
+
     WebElementActions elementActions = new WebElementActions();
 
     @FindBy(name = "login")
@@ -16,6 +18,7 @@ public class LoginPage extends BasePage{
     public WebElement password;
     @FindBy(name = "submit")
     public WebElement BtnLogin;
+
 
     public LoginPage openPage(){
         Driver.getDriver().get(ConfigReader.getProperty("applicationUrl"));
@@ -28,4 +31,7 @@ public class LoginPage extends BasePage{
         return this;
     }
 }
+
+
+
 

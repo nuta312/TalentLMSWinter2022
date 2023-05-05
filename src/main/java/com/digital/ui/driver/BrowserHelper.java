@@ -1,3 +1,4 @@
+
 package com.digital.ui.driver;
 
 import org.openqa.selenium.WebDriver;
@@ -42,3 +43,4 @@ public class BrowserHelper {
         driver.switchTo().window(windowID.get(0));
     }
 }
+
