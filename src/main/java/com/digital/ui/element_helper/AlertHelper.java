@@ -6,12 +6,13 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 public class AlertHelper {
 
     private WebDriver driver = Driver.getDriver();
+
+
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     public Alert switchAlert(){
         return Driver.getDriver().switchTo().alert();
@@ -19,11 +20,16 @@ public class AlertHelper {
 
     public void acceptAlert(){
         wait.until(ExpectedConditions.alertIsPresent());
-        switchAlert().accept();
+        getAlert().accept();
     }
+
+    private Alert getAlert() {
+        return null;
+    }
+
+
     public void dismissAlert(){
-        wait.until(ExpectedConditions.alertIsPresent());
-        switchAlert().dismiss();
+        getAlert().dismiss();
     }
 
 
@@ -42,5 +48,6 @@ public class AlertHelper {
         }
         return false;
     }
+
 }
 

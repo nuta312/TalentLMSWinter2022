@@ -28,10 +28,10 @@ public class LoginTests extends BaseUiTest {
     @Step("Проверка теста")
     public void loginWithValidCredentialsTest() throws MalformedURLException {
 
-        Driver.getDriver().get("https://www.youtube.com/watch?v=Kbj2Zss-5GY&list=RDbxD7BeZE4j8&index=2");
+        Driver.getDriver().get("https://www.google.com/");
         System.out.println("This is example test");
-
         Assert.assertTrue(false);
+
 
     }
 }

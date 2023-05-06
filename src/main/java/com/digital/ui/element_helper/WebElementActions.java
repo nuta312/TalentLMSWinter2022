@@ -10,15 +10,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
-
-/**
- * @author Nursultan Musakunov
- */
 
 public class WebElementActions {
 
@@ -83,6 +77,7 @@ public class WebElementActions {
         return this;
     }
 
+
     public static void pause(Integer milliseconds){
         try {
             TimeUnit.MILLISECONDS.sleep(milliseconds);
@@ -91,15 +86,4 @@ public class WebElementActions {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 
