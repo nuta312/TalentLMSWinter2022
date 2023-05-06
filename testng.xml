@@ -6,7 +6,7 @@
     </listeners>
     <test name="Regression Tests">
         <classes>
-            <class name="ui.smoke.AddAndUpdateGroupPageTest"></class>
+            <class name="ui.smoke.BuyCoursesTest"></class>
         </classes>
     </test>
 </suite>

@@ -2,6 +2,19 @@ package com.digital.Listeners;
 
 
 import com.digital.ui.driver.Driver;
+<<<<<<< HEAD
+        import org.openqa.selenium.OutputType;
+        import org.openqa.selenium.TakesScreenshot;
+        import org.openqa.selenium.WebDriver;
+        import org.openqa.selenium.remote.Augmenter;
+        import org.testng.ITestResult;
+        import org.testng.TestListenerAdapter;
+
+        import java.io.File;
+        import java.io.FileOutputStream;
+        import java.io.IOException;
+
+=======
 import com.digital.ui.driver.FirefoxWebDriver;
 import com.digital.ui.pages.LoginPage;
 import io.qameta.allure.Allure;
@@ -18,6 +31,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+>>>>>>> master
 
 
 public class ScreenshotListener extends TestListenerAdapter {
