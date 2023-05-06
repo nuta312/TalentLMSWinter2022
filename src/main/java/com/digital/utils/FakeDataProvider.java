@@ -19,6 +19,13 @@ public class FakeDataProvider {
     public static String generateOverriddenLanguage(){
         return faker.nation().language();
     }
+    public static String generateCountry(){
+        return faker.address().country();
+    }
+    public static String generateCity(){
+        return faker.address().city();
+    }
+
 
     public static void main(String[] args) {
         System.out.println(generateSiteName());

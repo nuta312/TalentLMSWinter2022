@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
+
+
 /**
  * @author Nursultan Musakunov
  */
@@ -17,6 +19,7 @@ public class WebElementActions {
 
     public WebElementActions input(WebElement element,String txt){
         waitElementToBeDisplayed(element);
+        element.clear();
         element.sendKeys(txt);
         return this;
     }
