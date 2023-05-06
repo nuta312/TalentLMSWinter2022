@@ -9,28 +9,29 @@ import org.openqa.selenium.support.FindBy;
 
 public class LoginPage extends BasePage{
 
+
+    WebElementActions elementActions = new WebElementActions();
+
     @FindBy(name = "login")
     public WebElement login;
     @FindBy(name = "password")
     public WebElement password;
     @FindBy(name = "submit")
-    public WebElement btnLogin;
+    public WebElement BtnLogin;
+
 
     public LoginPage openPage(){
-        Driver.getDriver().get(ConfigReader.getProperty("applicationUrl2"));
+        Driver.getDriver().get(ConfigReader.getProperty("applicationUrl"));
         return this;
     }
-
     public LoginPage authorization(){
-        elementActions.input(login,ConfigReader.getProperty("login"))
+        elementActions.input(login, ConfigReader.getProperty("login"))
                 .input(password,ConfigReader.getProperty("password"));
-        btnLogin.click();
-        return this;
-    }
-
-    public LoginPage closePage(){
-        Driver.closeDriver();
+        BtnLogin.click();
         return this;
     }
 }
+
+
+
 

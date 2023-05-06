@@ -5,17 +5,11 @@ package ui.smoke;
 import com.digital.annotations.TestCase;
 import com.digital.enums.Courses;
 import com.digital.ui.driver.Driver;
-import com.digital.ui.pages.BuyCoursesPage;
-import com.digital.ui.pages.HomePage;
+import com.digital.ui.pages.courses_page.BuyCoursesPage;
 import com.digital.ui.pages.LoginPage;
 import com.digital.ui.pages.courses_page.CourseHomePage;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
