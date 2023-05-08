@@ -13,7 +13,6 @@ import java.time.Duration;
  */
 public class WebElementActions {
 
-
     public WebElementActions input(WebElement element,String txt){
         waitElementToBeDisplayed(element);
         element.sendKeys(txt);
@@ -25,7 +24,10 @@ public class WebElementActions {
         element.click();
         return this;
     }
-
+    public WebElementActions fileupload(WebElement element,String txt){
+        element.sendKeys(txt);
+        return this;
+    }
     public WebElementActions waitElementToBeDisplayed(WebElement element){
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15))
                 .until(ExpectedConditions.visibilityOf(element));

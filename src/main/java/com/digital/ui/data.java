@@ -1,22 +1,24 @@
 package com.digital.ui;
 
-import com.digital.utils.FakerGenerator;
-import com.github.javafaker.Faker;
+public enum data {
+    NAME("john"),
+    SURNAME("Doe"),
+    EMAIL(data.NAME.getUserInfo()+"."+data.SURNAME.getUserInfo()+"@gmail.com"),
 
-public enum users {
-    NAME(FakerGenerator.randomFirstName()),
-    SURNAME(FakerGenerator.randomLastName()),
-    EMAIL(FakerGenerator.randomEmail()),
-    PASSWORD(FakerGenerator.randomPassword()),
+    PASSWORD("SomeWords123546"),
     BIO("some info about someone"),
     LEARNERTYPE("Trainer-Type"),//"Admin-Type"||"Trainer-Type"||"Learner-Type"
     TIMEZONE("92"),//by value
-    LANGUAGE("ru"),
+    LANGUAGE("en"),
     CHECKBOXSTATUS("Active"),
-    CHECKBOXDEACTIVE("deactivate_user")
+    CHECKBOXDEACTIVE("deactivate_user"),
+    URL("https://www.talentlms.com/"),
+    URLUSER("https://nna.talentlms.com/user/index"),
+    URLINFO("//a [text()='Info']")
+
     ;
     String userInfo;
-    users(String userInfo){
+    data(String userInfo){
         this.userInfo=userInfo;
     }
     public String getUserInfo(){
