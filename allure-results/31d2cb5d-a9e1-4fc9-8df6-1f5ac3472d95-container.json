@@ -1,0 +1,1 @@
+{"uuid":"31d2cb5d-a9e1-4fc9-8df6-1f5ac3472d95","name":"TalentLMSWinter2022","children":["22ebaef1-7efd-4cb1-890f-0644caba59dc"],"befores":[{"name":"starting","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1682332080143,"stop":1682332130726}],"afters":[],"start":1682332079924,"stop":1682332150272}
