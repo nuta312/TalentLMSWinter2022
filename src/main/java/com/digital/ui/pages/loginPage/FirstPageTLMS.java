@@ -1,7 +1,9 @@
 package com.digital.ui.pages.loginPage;
 
+import com.digital.ui.driver.Driver;
 import com.digital.ui.pages.basePage.BasePage;
 import com.digital.ui.pages.usersHP.userPage.UsersPage;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -22,7 +24,8 @@ public class FirstPageTLMS extends BasePage {
         webElementActions.press(btnLogin);
         return this;
     }
-    public UsersPage toToUserPage(){
+    public UsersPage goToUserPage(){
+        Driver.getDriver().navigate().to("https://nuta1bema.talentlms.com/user/index");
         final UsersPage usersPage = new UsersPage();
         return usersPage;
     }

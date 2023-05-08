@@ -107,12 +107,14 @@ public class Courses extends BasePage {
         WebElement instructorBtn = Driver.getDriver()
                 .findElement(By
                         .xpath("//tr[contains(., '" + courseName + "')]/td[3][contains(., 'Instructor')]"));
-        instructorBtn.click();
-        Thread.sleep(2000);
-        WebElement btnLearnerInInstructorRole = Driver.getDriver()
-                .findElement(By
-                        .xpath("//tr[contains(., '" + courseName + "')]/td[3][contains(., 'Instructor')]//div[contains(., 'Learner')]"));
-        btnLearnerInInstructorRole.click();
+        if (instructorBtn.isDisplayed()) {
+            instructorBtn.click();
+            Thread.sleep(2000);
+            WebElement btnLearnerInInstructorRole = Driver.getDriver()
+                    .findElement(By
+                            .xpath("//tr[contains(., '" + courseName + "')]/td[3][contains(., 'Instructor')]//div[contains(., 'Learner')]"));
+            btnLearnerInInstructorRole.click();
+        }
         return this;
     }
 
@@ -134,13 +136,15 @@ public class Courses extends BasePage {
     public Courses changeRoleToInstructor(String courseName) throws InterruptedException {
         WebElement instructorBtn = Driver.getDriver()
                 .findElement(By
-                        .xpath("//tr[contains(., 'CookingDeserts')]/td[3][contains(., 'Learner')]"));
-        instructorBtn.click();
-        Thread.sleep(2000);
-        WebElement btnLearnerInInstructorRole = Driver.getDriver()
-                .findElement(By
-                        .xpath("//tr[contains(., '" + courseName + "')]/td[3][contains(., 'Learner')]//div[contains(., 'Instructor')]"));
-        btnLearnerInInstructorRole.click();
+                        .xpath("//tr[contains(., '"+courseName+"')]/td[3][contains(., 'Learner')]"));
+        if (instructorBtn.isDisplayed()) {
+            instructorBtn.click();
+            Thread.sleep(2000);
+            WebElement btnLearnerInInstructorRole = Driver.getDriver()
+                    .findElement(By
+                            .xpath("//tr[contains(., '" + courseName + "')]/td[3][contains(., 'Learner')]//div[contains(., 'Instructor')]"));
+            btnLearnerInInstructorRole.click();
+        }
         return this;
     }
 
