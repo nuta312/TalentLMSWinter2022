@@ -6,11 +6,8 @@
     </listeners>
     <test name="Regression Tests">
         <classes>
-<<<<<<< HEAD
             <class name="ui.smoke.account_settings.BasicSettingsTest"></class>
-=======
             <class name="ui.smoke.BuyCoursesTest"></class>
->>>>>>> a94b642538c60072a62917bca3da0ffef731a56b
         </classes>
     </test>
 </suite>
