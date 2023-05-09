@@ -1,7 +1,6 @@
 package com.digital.ui.pages.account_settings;
 
 
-
 import com.digital.ui.driver.Driver;
 import com.digital.ui.element_helper.WebElementActions;
 import com.digital.ui.pages.BasePage;
@@ -11,8 +10,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.By;
-
-import java.io.File;
 import java.util.List;
 import java.util.Random;
 import static com.digital.enums.ValueForBasicSettingsPage.DESCRIPTION;
@@ -282,8 +279,6 @@ public class BasicSettingsPage extends BasePage{
 
 
 
-
-
     public BasicSettingsPage inputSiteName(){
         siteName.clear();
         elementActions.input(this.siteName, FakeDataProvider.generateSiteName());
@@ -399,13 +394,11 @@ public class BasicSettingsPage extends BasePage{
     public BasicSettingsPage refreshApiKey(){
         elementActions.press(btnRefreshApiKey)
                 .press(btnRefresh);
-//                .press(linkToDownloadApi);
         return this;
     }
     public BasicSettingsPage refreshXApiKey(){
         elementActions.press(btnRefreshXApiKey)
                 .press(btnRefresh);
-//                .press(linkToDownloadApi);
         return this;
     }
 
