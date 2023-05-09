@@ -21,6 +21,9 @@ public class ChromeWebDriver implements  Waits{
 //            options.addArguments("--headless");
 //        }
 
+        if(Boolean.getBoolean(ConfigReader.getProperty("headless"))){
+
+        }
 
         driver = new ChromeDriver(options);
         ChromeWebDriver chromeWebDriver = new ChromeWebDriver();

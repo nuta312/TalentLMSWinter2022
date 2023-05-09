@@ -1,7 +1,7 @@
-package ui.regression.account_settings;
+package ui.smoke.account_settings;
 
 import com.digital.annotations.TestCase;
-import com.digital.ui.driver.Driver;;
+import com.digital.ui.driver.Driver;
 import io.qameta.allure.*;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -17,7 +17,9 @@ public class BasicSettingsTest extends BaseUiTest {
 
     @Test(priority = 1, description = "Automation of basic settings page")
     public void inputSiteNameTest() {
-
+        loginPage.authorization();
+        homePage.goToHomePage()
+                .clickToAccountSettings();
         basicSettingsPage
                 .inputSiteName()
                 .displayIconInfoText(basicSettingsPage.siteNameIconInfo)
@@ -71,7 +73,7 @@ public class BasicSettingsTest extends BaseUiTest {
                 .checkCheckbox(basicSettingsPage.checkboxBambooHR)
                 .checkCheckbox(basicSettingsPage.checkboxInactiveUsers);
         elementActions
-                .input(basicSettingsPage.inputSubdomain, "winter2022");
+                .input(basicSettingsPage.inputSubdomain, "nuta1bema");
         basicSettingsPage
                 .addCustomCourseFields()
 
@@ -248,7 +250,7 @@ public class BasicSettingsTest extends BaseUiTest {
     @TestCase(id = 10021)
     @Severity(SeverityLevel.MINOR)
     public void inputSubdomainBambooHRTest() {
-        Assert.assertEquals(basicSettingsPage.inputSubdomain.getAttribute("value"), "winter2022");
+        Assert.assertEquals(basicSettingsPage.inputSubdomain.getAttribute("value"), "nuta1bema");
     }
 
     @Test(priority = 23, description = "Verify a field with the dropdown type has been added in the custom source fields section.")

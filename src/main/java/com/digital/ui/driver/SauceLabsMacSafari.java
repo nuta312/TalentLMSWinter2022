@@ -17,7 +17,7 @@ public class SauceLabsMacSafari {
         browserOptions.setCapability("sauce:options", sauceOptions);
         URL url = null;
         try {
-            url = new URL("https://oauth-adiletkushubekov-07697:*****a49b@ondemand.eu-central-1.saucelabs.com:443/wd/hub");
+            url = new URL("https://oauth-ktashbaev1989-fb13e:36d8d29e-a06a-410b-b1f5-06a664f10013@ondemand.eu-central-1.saucelabs.com:443/wd/hub");
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -25,6 +25,8 @@ public class SauceLabsMacSafari {
     }
     public static void main(String[] args) {
         RemoteWebDriver remoteWebDriver = loadSauceLabMacSafariDriver();
-        remoteWebDriver.get("https://www.youtube.com/watch?v=Kbj2Zss-5GY&list=RDbxD7BeZE4j8&index=2");
+
+        remoteWebDriver.get("https://www.youtube.com/watch?v=F1gK85IEeDI");
     }
 }
+

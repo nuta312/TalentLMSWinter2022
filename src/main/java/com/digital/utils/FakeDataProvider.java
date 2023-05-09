@@ -7,6 +7,7 @@ public class FakeDataProvider {
   public static Faker faker = new Faker();
 
     public static String generateFirstName(){
+
         return faker.name().firstName();
     }
     public static String generateSiteName(){
@@ -28,7 +29,7 @@ public class FakeDataProvider {
 
 
     public static void main(String[] args) {
-        System.out.println(generateSiteName());
+        System.out.println(generateFirstName());
     }
 
 

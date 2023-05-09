@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All tests">
+    <listeners>
+        <listener class-name="com.digital.Listeners.ScreenshotListener"></listener>
+    </listeners>
     <test name="Regression Tests">
         <classes>
-            <class name="ui.regression.account_settings.BasicSettingsTest"></class>
+<<<<<<< HEAD
+            <class name="ui.smoke.account_settings.BasicSettingsTest"></class>
+=======
+            <class name="ui.smoke.BuyCoursesTest"></class>
+>>>>>>> a94b642538c60072a62917bca3da0ffef731a56b
         </classes>
     </test>
 </suite>

@@ -1,7 +1,7 @@
 package com.digital.enums;
 
 public enum ValueForBasicSettingsPage {
-    URL("https://winter2022.talentlms.com/account/basic_index"),
+    URL("https://nuta1bema.talentlms.com/account/basic_index"),
     DESCRIPTION("TalentLMS it is an easy-to-use learning management system (LMS), suitable for both experienced and beginner trainers. The system allows you to quickly create courses for corporate online trainings."),
     LOGO("logo.png"),
     FAVICON("favicon.png"),
