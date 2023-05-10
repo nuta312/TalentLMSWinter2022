@@ -21,6 +21,8 @@ public class Driver {
                 case "edge":
                     driver = EdgeWebDriver.loadEdgeDriver();
                     break;
+//                    case "sauce_Mac_Safari";
+//                    driver SauceLabsMacSafari.loadSauceLabsMacSafariDriver();
                 default:
                     throw new RuntimeException("You provided wrong browser name");
             }
