@@ -1,6 +1,5 @@
 package com.digital.Listeners;
 
-
 import com.digital.ui.driver.Driver;
 import com.digital.ui.driver.FirefoxWebDriver;
 import io.qameta.allure.Allure;
