@@ -15,7 +15,7 @@ public abstract class BasePage implements DriverActions {
     WebElementActions elementActions = new WebElementActions();
     public BasePage(){
 
-   //     PageFactory.initElements(Driver.getDriver(), this);
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
 

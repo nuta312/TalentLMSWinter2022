@@ -10,12 +10,14 @@ import com.digital.ui.pages.UserPage.PageGroups;
 import com.digital.ui.pages.UserPage.UsersOptions;
 import com.digital.ui.pages.UserPage.UsersPage;
 
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
-
-//import static com.digital.ui.element_helper.WebElementActions.logger;
 
 
 public abstract class BaseUiTest implements DriverActions {
