@@ -1,4 +1,3 @@
-
 package ui.smoke;
 
 import com.digital.ui.driver.Driver;
@@ -14,4 +13,5 @@ public class Navigate extends BaseUiTest {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
     }
 }
+
 

@@ -3,6 +3,9 @@ package com.digital.ui.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+/**
+ * @author Adilet Kushubekov
+ */
 
 public class HomePage extends BasePage {
 
@@ -10,7 +13,7 @@ public class HomePage extends BasePage {
     public WebElement talentLmsHomePageLink;
     @FindBy(xpath = "//div[contains(@class,'tl-bold-link')]//a[contains(text(),'Users')]")
     public WebElement Users;
-     @FindBy(xpath = "//a[contains(text(),'Account & Settings')]")
+    @FindBy(xpath = "//a[contains(text(),'Account & Settings')]")
     public WebElement accountSettings;
 
     public HomePage goToHomePage() {
@@ -22,8 +25,10 @@ public class HomePage extends BasePage {
         elementActions.press(Users);
         return this;
     }
-    public HomePage clickToAccountSettings(){
+
+    public HomePage clickToAccountSettings() {
         accountSettings.click();
         return this;
-}
+    }
+
 }

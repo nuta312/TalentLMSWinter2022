@@ -1,10 +1,7 @@
 package com.digital.Listeners;
 
-
 import com.digital.ui.driver.Driver;
-
 import com.digital.ui.driver.FirefoxWebDriver;
-import com.digital.ui.pages.LoginPage;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
@@ -13,12 +10,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+
 
 
 public class ScreenshotListener extends TestListenerAdapter {
