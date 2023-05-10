@@ -5,6 +5,7 @@ import com.digital.ui.pages.AddAndUpdateGroupPage;
 import io.qameta.allure.*;
 import org.testng.annotations.Test;
 import ui.BaseUiTest;
+import ui.BaseUiTest;
 
 public class AddAndUpdateGroupPageTest extends BaseUiTest {
 

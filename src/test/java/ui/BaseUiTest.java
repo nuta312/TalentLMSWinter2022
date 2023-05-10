@@ -1,9 +1,8 @@
 package ui;
-import com.digital.Listeners.ScreenshotListener;
+
 import com.digital.ui.driver.Driver;
 import com.digital.ui.driver.DriverActions;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.digital.ui.pages.account_settings.E_CommercePage;
 import com.digital.ui.pages.HomePage;
 import com.digital.ui.pages.LoginPage;
 import com.digital.ui.pages.UserPage.FilesPage;
@@ -25,6 +24,7 @@ import org.testng.annotations.BeforeClass;
         public UsersOptions usersOptions;
         public UsersPage usersPage;
 
+        public E_CommercePage e_commercePage;
 
         @BeforeClass
         public void setUp() {
@@ -37,6 +37,7 @@ import org.testng.annotations.BeforeClass;
             pageGroups = new PageGroups();
             usersOptions = new UsersOptions();
             usersPage = new UsersPage();
+            e_commercePage = new E_CommercePage();
 
         }
 
@@ -46,5 +47,5 @@ import org.testng.annotations.BeforeClass;
             Driver.closeDriver();
         }
     }
-}
+
 

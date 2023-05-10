@@ -71,7 +71,7 @@ public class ECommercePageTest {
             "the loop icon to check the invoice preview ")
     @Link(name = "requirements", url = "https://nuta1bema.talentlms.com/")
     @Step("Проверка теста")
-    public void checkInvoiceTest() throws InterruptedException {
+    public void checkInvoiceTest(){
         elementActions.press(e_commercePage.invoices)
                 .press(e_commercePage.invoiceCheckBox)
                 .input(e_commercePage.invoiceMessage, "This invoice is for students from Digital Nomads Winter 2022")
@@ -98,7 +98,6 @@ public class ECommercePageTest {
     public void addCouponTest() throws InterruptedException {
         String actualCoupon = e_commercePage.addCoupons("123","09/05/2023","","5",
                 "20","Advanced Features of TalentLMS (002)","Economics", "Accounting").toString();
-        assertNotNull(e_commercePage.addCoupons(), "This pop-up window not empty");
-
+        assertFalse(actualCoupon.isEmpty(), "This pop-up window not empty");
     }
 }
