@@ -13,7 +13,6 @@ import org.testng.Assert;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-
 public class WebElementActions {
 
 
@@ -26,6 +25,7 @@ public class WebElementActions {
     public WebElementActions input(WebElement element,String txt){
         logger.warn("I'm trying to write " + txt + " " + element);
         waitElementToBeDisplayed(element);
+        element.clear();
         element.sendKeys(txt);
         logger.info("Succesfully write");
         return this;
@@ -62,6 +62,13 @@ public class WebElementActions {
         element.sendKeys(Keys.DOWN,Keys.ENTER);
         return this;
     }
+    public static void pause(Integer milliseconds){
+        try {
+            TimeUnit.MILLISECONDS.sleep(milliseconds);
+        }catch (InterruptedException e){
+            System.out.println("error seconds");
+        }
+    }
 
 
     public WebElementActions pressUpAndEnter(WebElement element){
@@ -77,13 +84,5 @@ public class WebElementActions {
         return this;
     }
 
-
-    public static void pause(Integer milliseconds){
-        try {
-            TimeUnit.MILLISECONDS.sleep(milliseconds);
-        }catch (InterruptedException e){
-            System.out.println("error seconds");
-        }
-    }
 }
 

@@ -1,5 +1,5 @@
 package com.digital.ui.driver;
-import org.openqa.selenium.chrome.ChromeOptions;
+
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariOptions;
 import java.net.MalformedURLException;
@@ -25,6 +25,8 @@ public class SauceLabsMacSafari {
     }
     public static void main(String[] args) {
         RemoteWebDriver remoteWebDriver = loadSauceLabMacSafariDriver();
+
         remoteWebDriver.get("https://www.youtube.com/watch?v=F1gK85IEeDI");
     }
 }
+
