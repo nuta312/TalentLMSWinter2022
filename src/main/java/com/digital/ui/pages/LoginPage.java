@@ -9,7 +9,6 @@ import org.openqa.selenium.support.FindBy;
 /**
  * @author Adilet Kushubekov
  */
-
 public class LoginPage extends BasePage{
     WebElementActions elementActions = new WebElementActions();
 
