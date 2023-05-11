@@ -12,7 +12,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.BaseUiTest;
 
-
 import java.net.MalformedURLException;
 
 
