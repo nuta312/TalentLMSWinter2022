@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.Map;
 
 public class AzizasTest {
     AzizasTask at = new AzizasTask();
@@ -29,21 +28,12 @@ public class AzizasTest {
                 .addCourseTab();
         WebElement element2 = Driver.getDriver().findElement(By.xpath("(//span[@class='label label-registration'])[2]"));
         at.compareResult("GROUP MEMBER",element2.getText());
-                at.removeCourseTab();
+                at.removeCourseTab()
 
-                //.closeChrome();
+                .closeChrome();
 
     }
 
-//    String [] expectedResult = {"User added to group successfully",
-//            "User synchronized successfully.",
-//            "User unsynchronized successfully.",
-//            "User removed from group successfully.",
-//            "Course added to group successfully.",
-//            "Course removed from group successfully."};
-//
-//    //use assert to compare expected and actual results
-//    int count = 0;
     public static void compareResult(String expectedResult, String actualResult) {
         Assert.assertEquals(actualResult, expectedResult);
         System.out.println("Expected result: " + expectedResult);
