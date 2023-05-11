@@ -11,7 +11,7 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import ui.BaseUiTest;
-import ui.BaseUiTest;
+
 
 import java.net.MalformedURLException;
 
@@ -31,7 +31,7 @@ public class LoginTests extends BaseUiTest {
 
         Driver.getDriver().get("https://www.google.com/");
         System.out.println("This is example test");
-        Assert.assertTrue(true);
+        Assert.assertTrue(false);
 
 
     }

@@ -46,7 +46,7 @@ public class WebElementActions {
     }
 
     public WebElementActions waitElementToBeClickAble(WebElement element){
-        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5))
+        new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(40))
                 .until(ExpectedConditions.elementToBeClickable(element));
         return this;
     }
