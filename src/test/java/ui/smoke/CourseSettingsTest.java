@@ -1,15 +1,15 @@
 package ui.smoke;
 
 import com.digital.ui.driver.Driver;
-import com.digital.ui.pages.AzizasTask;
+import com.digital.ui.pages.AddAndRemoveUserAndCourseToGroup;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class AzizasTest {
-    AzizasTask at = new AzizasTask();
+public class CourseSettingsTest {
+    AddAndRemoveUserAndCourseToGroup at = new AddAndRemoveUserAndCourseToGroup();
 
     @Test
     public void Test () throws InterruptedException {

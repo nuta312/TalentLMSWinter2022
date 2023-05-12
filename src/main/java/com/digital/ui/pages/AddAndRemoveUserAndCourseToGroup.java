@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class AzizasTask extends LoginPage{
+public class AddAndRemoveUserAndCourseToGroup extends LoginPage{
 
     WebDriver driver = Driver.getDriver();
 
@@ -33,54 +33,54 @@ public class AzizasTask extends LoginPage{
     WebElement addCourse;
 
 
-    public AzizasTask openSite(){
+    public AddAndRemoveUserAndCourseToGroup openSite(){
 
         driver.get("https://azizastest.talentlms.com/group/users/id:4");
         return this;
     }
 
-    public AzizasTask addUser() throws InterruptedException {
+    public AddAndRemoveUserAndCourseToGroup addUser() throws InterruptedException {
         Thread.sleep(2000);
         addUserToGroup.click();
         return this;
     }
-    public AzizasTask synchUser() throws InterruptedException {
+    public AddAndRemoveUserAndCourseToGroup synchUser() throws InterruptedException {
         Thread.sleep(2000);
         synchronizeUser.click();
         return this;
 
     }
-    public AzizasTask unsynchUser() throws InterruptedException {
+    public AddAndRemoveUserAndCourseToGroup unsynchUser() throws InterruptedException {
         Thread.sleep(2000);
         unsynchronizeUser.click();
         return this;
     }
-    public  AzizasTask removeUser() throws InterruptedException {
+    public AddAndRemoveUserAndCourseToGroup removeUser() throws InterruptedException {
         Thread.sleep(2000);
         removeUserFromGroup.click();
         return this;
     }
-    public AzizasTask openCoursesTab () throws InterruptedException{
+    public AddAndRemoveUserAndCourseToGroup openCoursesTab () throws InterruptedException{
         Thread.sleep(2000);
         coursesTab.click();
         return this;
     }
-    public AzizasTask removeCourseTab () throws InterruptedException{
+    public AddAndRemoveUserAndCourseToGroup removeCourseTab () throws InterruptedException{
         Thread.sleep(2000);
         removeCourse.click();
         return this;
     }
-    public AzizasTask addCourseTab () throws InterruptedException{
+    public AddAndRemoveUserAndCourseToGroup addCourseTab () throws InterruptedException{
         Thread.sleep(2000);
         addCourse.click();
         return this;
     }
-    public AzizasTask closeChrome () {
+    public AddAndRemoveUserAndCourseToGroup closeChrome () {
         driver.quit();
         return this;
     }
 
-    public AzizasTask compareResult(String expectedResult, String actualResult) {
+    public AddAndRemoveUserAndCourseToGroup compareResult(String expectedResult, String actualResult) {
         Assert.assertEquals(actualResult, expectedResult);
         System.out.println("Expected result: " + expectedResult);
         System.out.println("Actual result: " + actualResult);

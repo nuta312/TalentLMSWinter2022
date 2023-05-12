@@ -5,7 +5,6 @@ import com.digital.ui.driver.Driver;
 import com.digital.ui.element_helper.WebElementActions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 /**
  * @author Adilet Kushubekov
  */
@@ -23,7 +22,6 @@ public class LoginPage extends BasePage{
         Driver.getDriver().get(ConfigReader.getProperty("applicationUrl"));
         return this;
     }
-
     public LoginPage authorization(){
         elementActions.input(login,ConfigReader.getProperty("login"))
                 .input(password,ConfigReader.getProperty("password"));
@@ -31,4 +29,5 @@ public class LoginPage extends BasePage{
         return this;
     }
 }
+
 

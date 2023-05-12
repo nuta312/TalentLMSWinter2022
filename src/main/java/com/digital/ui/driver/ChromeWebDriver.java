@@ -1,5 +1,6 @@
 package com.digital.ui.driver;
 
+import com.digital.config.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +17,13 @@ public class ChromeWebDriver implements  Waits{
         options.addArguments("--disable-extensions");
         options.addArguments("--no-sandbox");
 
+//        if (Boolean.parseBoolean(ConfigReader.getProperty("headless"))){
+//            options.addArguments("--headless");
+//        }
+
+        if(Boolean.getBoolean(ConfigReader.getProperty("headless"))){
+
+        }
 
         driver = new ChromeDriver(options);
         ChromeWebDriver chromeWebDriver = new ChromeWebDriver();
