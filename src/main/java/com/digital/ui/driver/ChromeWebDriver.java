@@ -5,7 +5,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import java.time.Duration;
 
 public class ChromeWebDriver implements  Waits{
@@ -20,7 +19,6 @@ public class ChromeWebDriver implements  Waits{
 //        if (Boolean.parseBoolean(ConfigReader.getProperty("headless"))){
 //            options.addArguments("--headless");
 //        }
-
 
         driver = new ChromeDriver(options);
         ChromeWebDriver chromeWebDriver = new ChromeWebDriver();

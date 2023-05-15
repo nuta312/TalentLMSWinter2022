@@ -12,7 +12,7 @@ public class Driver {
 
     private static WebDriver driver;
 
-    public static WebDriver getDriver() {
+    public static WebDriver getDriver(){
         if (driver == null) {
             switch (ConfigReader.getProperty("browser").toLowerCase()) {
                 case "chrome":
@@ -21,8 +21,18 @@ public class Driver {
                 case "edge":
                     driver = EdgeWebDriver.loadEdgeDriver();
                     break;
-//                    case "sauce_Mac_Safari";
-//                    driver SauceLabsMacSafari.loadSauceLabsMacSafariDriver();
+
+                case "sauce_windows_chrome":
+                    driver = SauceLabsWindowsChrome.loadSauceLabWindowsChromeDriver();
+
+                case "firefox":
+                    driver = FirefoxWebDriver.loadFirefoxDriver();
+
+                    break;
+                case  "sauce_mac_safari":
+                    driver = SauceLabsMacFireFox.loadSauceMacFireFoxDriver();
+
+                    break;
                 default:
                     throw new RuntimeException("You provided wrong browser name");
             }

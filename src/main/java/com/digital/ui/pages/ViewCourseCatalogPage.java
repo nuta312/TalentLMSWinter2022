@@ -6,7 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
-
+/**
+ * @author Chyngyz & Ulan
+ */
 public class ViewCourseCatalogPage extends BasePage {
 
     WebElementActions elementActions = new WebElementActions();

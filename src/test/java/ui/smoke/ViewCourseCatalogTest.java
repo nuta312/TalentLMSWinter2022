@@ -11,8 +11,11 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+/**
+ * @author Chyngyz & Ulan
+ */
 
 public class ViewCourseCatalogTest {
     CourseHomePage courseHomePage = new CourseHomePage();
@@ -21,7 +24,7 @@ public class ViewCourseCatalogTest {
     HomePage homePage = new HomePage();
 
 
-    @Test(priority = 1, description = "")
+    @Test(priority = 1, description = "Opens catalog page and goes to view courses catalog")
     @TestCase(id = 18)
     @Severity(SeverityLevel.MINOR)
     public void catalogMethodTest() {
@@ -32,7 +35,7 @@ public class ViewCourseCatalogTest {
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://testtalant.talentlms.com/catalog");
     }
 
-    @Test(priority = 2, description = "")
+    @Test(priority = 2, description = "Entering and searching courses")
     @TestCase(id = 19)
     @Severity(SeverityLevel.MINOR)
     public void inputSearchCoursesTest() {
@@ -41,7 +44,7 @@ public class ViewCourseCatalogTest {
         viewCourseCatalogPage.searchClearCourses.click();
     }
 
-    @Test(priority = 3, description = "")
+    @Test(priority = 3, description = "Opening course description")
     @TestCase(id = 20)
     @Severity(SeverityLevel.MINOR)
     public void openIntroductionTalentLmsTest() {
@@ -49,7 +52,7 @@ public class ViewCourseCatalogTest {
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://testtalant.talentlms.com/catalog/info/id:123");
     }
 
-    @Test(priority = 4, description = "")
+    @Test(priority = 4, description = "Entering back button to return to previous page")
     @TestCase(id = 21)
     @Severity(SeverityLevel.MINOR)
     public void backBtnTest() {
@@ -57,7 +60,7 @@ public class ViewCourseCatalogTest {
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://testtalant.talentlms.com/catalog/index");
     }
 
-    @Test(priority = 5, description = "")
+    @Test(priority = 5, description = "Selecting course order")
     @TestCase(id = 22)
     @Severity(SeverityLevel.MINOR)
     public void selectCourseOrderTest() {

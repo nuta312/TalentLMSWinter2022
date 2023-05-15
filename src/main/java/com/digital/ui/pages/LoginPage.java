@@ -6,7 +6,10 @@ import com.digital.ui.element_helper.WebElementActions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage extends BasePage {
+/**
+ * @author Adilet Kushubekov
+ */
+public class LoginPage extends BasePage{
     WebElementActions elementActions = new WebElementActions();
 
     @FindBy(name = "login")
@@ -17,18 +20,14 @@ public class LoginPage extends BasePage {
     public WebElement BtnLogin;
 
     public LoginPage openPage(){
-        Driver.getDriver().get(ConfigReader.getProperty("applicationUrl2"));
-        return this;
-    }
-    public LoginPage authorization(){
-        elementActions.input(login,ConfigReader.getProperty("login"))
-                .input(password,ConfigReader.getProperty("password"));
-        BtnLogin.click();
+        Driver.getDriver().get(ConfigReader.getProperty("applicationUrl"));
         return this;
     }
 
-    public LoginPage closePage(){
-        Driver.closeDriver();
+    public LoginPage authorization(){
+        elementActions.input(login,ConfigReader.getProperty("login"))
+       .input(password,ConfigReader.getProperty("password"));
+        BtnLogin.click();
         return this;
     }
 }
