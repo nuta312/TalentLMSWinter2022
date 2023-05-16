@@ -22,8 +22,6 @@ public class Driver {
                     driver = EdgeWebDriver.loadEdgeDriver();
                     break;
 
-               /* case "safari":
-                    driver = */
                 case "sauce_windows_chrome":
                     driver = SauceLabsWindowsChrome.loadSauceLabWindowsChromeDriver();
 

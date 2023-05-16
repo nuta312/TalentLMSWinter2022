@@ -61,7 +61,6 @@
             <version>5.3.2</version>
         </dependency>
 
-
         <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
         <dependency>
             <groupId>com.github.javafaker</groupId>
@@ -77,25 +76,17 @@
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-commandline -->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-commandline</artifactId>
-            <version>2.21.0</version>
-            <type>pom</type>
-        </dependency>
-
-
-
-
         <!-- https://mvnrepository.com/artifact/com.mailosaur/mailosaur-java -->
         <dependency>
             <groupId>com.mailosaur</groupId>
             <artifactId>mailosaur-java</artifactId>
             <version>7.12.0</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.0</version>
+        </dependency>
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
@@ -110,48 +101,6 @@
             <version>7.12.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.17.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.17.0</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.mailosaur</groupId>
-            <artifactId>mailosaur-java</artifactId>
-            <version>7.12.0</version>
-        </dependency>
-
-
-        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-attachments -->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-attachments</artifactId>
-            <version>2.21.0</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-rest-assured</artifactId>
-            <version>2.21.0</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.17.0</version>
-        </dependency>
-
-
-
     </dependencies>
 
     <build>
@@ -159,6 +108,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
                 <configuration>
                     <source>${mvn.source.version}</source>
                     <target>${mvn.target.version}</target>
@@ -218,9 +168,5 @@
         </plugins>
     </build>
 
-
-
-
-
-
 </project>
+

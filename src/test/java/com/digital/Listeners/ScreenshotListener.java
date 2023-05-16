@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -17,10 +18,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 
-
 public class ScreenshotListener extends TestListenerAdapter {
 
-//    private boolean createFile(File screenshot) {
+    //    private boolean createFile(File screenshot) {
 //        boolean fileCreated = false;
 //
 //        if (screenshot.exists()) {
@@ -88,10 +88,10 @@ public class ScreenshotListener extends TestListenerAdapter {
 //        }
 //    }
 // Text attachments for Allure
-@Attachment(value = "{0}", type = "text/plain")
-public static String saveTextLog(String message) {
-    return message;
-}
+    @Attachment(value = "{0}", type = "text/plain")
+    public static String saveTextLog(String message) {
+        return message;
+    }
 
     // Text attachments for Allure
     @Attachment(value = "Page screenshot", type = "image/png")

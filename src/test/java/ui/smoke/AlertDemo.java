@@ -12,9 +12,6 @@ import java.time.Duration;
 
 public class AlertDemo {
 
-
-
-
     @Test
     public void demo1() throws InterruptedException {
         Driver.getDriver().get("https://demoqa.com/alerts");
@@ -36,13 +33,5 @@ public class AlertDemo {
         Thread.sleep(1000);
         alert.accept();
         WebElementActions.pause(1000);
-
-
-
-
-
-
-
-
     }
 }

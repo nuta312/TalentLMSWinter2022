@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+
 public class SauceLabsMacSafari {
     public static RemoteWebDriver loadSauceLabMacSafariDriver() {
         SafariOptions browserOptions = new SafariOptions();
@@ -15,6 +16,7 @@ public class SauceLabsMacSafari {
         sauceOptions.put("build", "<your build id>");
         sauceOptions.put("name", "<your test name>");
         browserOptions.setCapability("sauce:options", sauceOptions);
+
         URL url = null;
         try {
             url = new URL("https://oauth-ktashbaev1989-fb13e:36d8d29e-a06a-410b-b1f5-06a664f10013@ondemand.eu-central-1.saucelabs.com:443/wd/hub");
@@ -29,4 +31,3 @@ public class SauceLabsMacSafari {
         remoteWebDriver.get("https://www.youtube.com/watch?v=F1gK85IEeDI");
     }
 }
-
