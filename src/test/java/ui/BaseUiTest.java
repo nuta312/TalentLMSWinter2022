@@ -6,13 +6,11 @@ import com.digital.ui.driver.DriverActions;
 import com.digital.ui.element_helper.WebElementActions;
 import com.digital.ui.pages.HomePage;
 import com.digital.ui.pages.LoginPage;
+import com.digital.ui.pages.UserPage.*;
 import com.digital.ui.pages.account_settings.BasicSettingsPage;
+import com.digital.utils.WaitforSeconds;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import com.digital.ui.pages.UserPage.FilesPage;
-import com.digital.ui.pages.UserPage.PageGroups;
-import com.digital.ui.pages.UserPage.UsersOptions;
-import com.digital.ui.pages.UserPage.UsersPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -31,6 +29,8 @@ public abstract class BaseUiTest implements DriverActions {
     public PageGroups pageGroups;
     public UsersOptions usersOptions;
     public UsersPage usersPage;
+    public UsersGroupsAdmins usersGroupsAdmins;
+    public WaitforSeconds waitforSeconds = new WaitforSeconds();
 
 
     @BeforeClass
@@ -46,7 +46,7 @@ public abstract class BaseUiTest implements DriverActions {
         pageGroups = new PageGroups();
         usersOptions = new UsersOptions();
         usersPage = new UsersPage();
-
+        usersGroupsAdmins = new UsersGroupsAdmins();
     }
 
     @AfterClass

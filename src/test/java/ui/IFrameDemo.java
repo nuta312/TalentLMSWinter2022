@@ -1,6 +1,5 @@
 package ui;
 
-
 import static org.testng.AssertJUnit.assertEquals;
 import static org.testng.AssertJUnit.assertNotNull;
 
@@ -18,9 +17,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.util.List;
-
 public class IFrameDemo {
-
     public static void main(String[] args) {
         WebDriver driver = Driver.getDriver();
 
@@ -38,29 +35,24 @@ public class IFrameDemo {
     }
 
 
-        @Test
-        public void testExample() throws IOException, MailosaurException {
-            // Available in the API tab of a server
-            String apiKey = "1iBqzd6Gkd1EhESHWvlzn0aqZy0l1yCo";
-            String serverId = "iaczgwzs";
-            String serverDomain = "beat-car@iaczgwzs.mailosaur.net";
+    @Test
+    public void testExample() throws IOException, MailosaurException {
+        // Available in the API tab of a server
+        String apiKey = "1iBqzd6Gkd1EhESHWvlzn0aqZy0l1yCo";
+        String serverId = "iaczgwzs";
+        String serverDomain = "beat-car@iaczgwzs.mailosaur.net";
 
-            MailosaurClient mailosaur = new MailosaurClient(apiKey);
+        MailosaurClient mailosaur = new MailosaurClient(apiKey);
 
-            MessageSearchParams params = new MessageSearchParams();
-            params.withServer(serverId);
+        MessageSearchParams params = new MessageSearchParams();
+        params.withServer(serverId);
 
-            SearchCriteria criteria = new SearchCriteria();
-            criteria.withSentTo("asdas@" + serverDomain);
+        SearchCriteria criteria = new SearchCriteria();
+        criteria.withSentTo("asdas@" + serverDomain);
 
-            Message message = mailosaur.messages().get(params, criteria);
+        Message message = mailosaur.messages().get(params, criteria);
 
-            assertNotNull(message);
-            assertEquals("My email subject", message.subject());
-        }
+        assertNotNull(message);
+        assertEquals("My email subject", message.subject());
     }
-
-
-
-
-
+}
