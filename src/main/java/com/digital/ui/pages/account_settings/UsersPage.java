@@ -3,6 +3,7 @@ package com.digital.ui.pages.account_settings;
 
 import com.digital.ui.driver.Driver;
 import com.digital.ui.element_helper.WebElementActions;
+import com.digital.ui.pages.BasePage;
 import com.github.javafaker.Faker;
 import org.bouncycastle.jcajce.provider.symmetric.Threefish;
 import org.openqa.selenium.By;
@@ -24,9 +25,8 @@ import java.util.List;
  * @author Bakai Saitkulov
  */
 
-public class UsersPage {
+public class UsersPage extends BasePage {
 
-    private WebElementActions elementActions = new WebElementActions();
     Faker faker = new Faker();
     Actions actions = new Actions(Driver.getDriver());
 

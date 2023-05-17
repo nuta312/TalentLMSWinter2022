@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import ui.BaseUiTest;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ import java.util.stream.Collectors;
 import static com.digital.utils.FakeDataProvider.faker;
 import static org.testng.Assert.*;
 
-public class UserPageTest {
+public class UserPageTest extends BaseUiTest {
     WebElementActions elementActions = new WebElementActions();
     UsersPage usersPage = new UsersPage();
     LoginPage loginPage = new LoginPage();
@@ -109,10 +110,5 @@ public class UserPageTest {
         usersPage.saveBtn.click();
         WebElementActions.pause(1000);
         assertTrue(usersPage.successMessage.isDisplayed());
-    }
-    @Test(priority = 12)
-    public void tearDown(){
-        Driver.getDriver().close();
-        Driver.getDriver().quit();
     }
 }

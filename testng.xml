@@ -6,7 +6,19 @@
     </listeners>
     <test name="Regression Tests">
         <classes>
+            <class name="ui.BaseUiTest"></class>
             <class name="ui.smoke.account_settings.BasicSettingsTest"></class>
+            <class name="ui.smoke.account_settings.DomainPageTest"></class>
+            <class name="ui.smoke.account_settings.SubscriptionPageTest"></class>
+            <class name="ui.smoke.account_settings.UserPageTest"></class>
+            <class name="ui.smoke.AddAndUpdateGroupPageTest"></class>
+            <class name="ui.smoke.CategoryTest"></class>
+            <class name="ui.smoke.Navigate"></class>
+            <class name="ui.smoke.TestFindTD3"></class>
+            <class name="ui.smoke.UploadFilesTest"></class>
+            <class name="ui.smoke.ViewCourseCatalogTest"></class>
+            <class name="ui.regression.userGroupTest"></class>
+            <class name="ui.regression.UsersFiles"></class>
             <class name="ui.smoke.BuyCoursesTest"></class>
         </classes>
     </test>
