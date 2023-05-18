@@ -2,6 +2,7 @@ package com.digital.ui.element_helper;
 
 import com.digital.ui.driver.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -76,5 +77,21 @@ public class WebElementActions {
         Assert.assertEquals(element.getText(), str);
         return this;
     }
+    public WebElementActions scrollDown() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.scrollByAmount(0, 250).perform();
+        return this;
+    }
+    
 
+
+    public WebElementActions pressJs(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();", element);
+        return this;
+    }
+
+    public Actions getActions() {
+        return new Actions(Driver.getDriver());
+    }
 }
