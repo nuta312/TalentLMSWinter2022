@@ -5,9 +5,13 @@
         <listener class-name="com.digital.Listeners.ScreenshotListener"></listener>
     </listeners>
     <test name="Regression Tests">
-        <classes>
-            <class name="ui.smoke.account_settings.BasicSettingsTest"></class>
-            <class name="ui.smoke.BuyCoursesTest"></class>
-        </classes>
+     <packages>
+         <package name="ui.regression"></package>
+     </packages>
+    </test>
+    <test name="Smoke Tests">
+        <packages>
+            <package name="ui.smoke"></package>
+        </packages>
     </test>
 </suite>
