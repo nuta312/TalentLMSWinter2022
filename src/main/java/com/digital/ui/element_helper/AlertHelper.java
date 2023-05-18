@@ -12,23 +12,28 @@ import java.time.Duration;
 public class AlertHelper {
 
     private WebDriver driver = Driver.getDriver();
-
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-    public Alert getAlert(){
-        return driver.switchTo().alert();
+    public Alert switchAlert(){
+        return Driver.getDriver().switchTo().alert();
     }
 
     public void acceptAlert(){
         wait.until(ExpectedConditions.alertIsPresent());
-        getAlert().accept();
+        switchAlert().accept();
     }
-
     public void dismissAlert(){
-        getAlert().dismiss();
+        wait.until(ExpectedConditions.alertIsPresent());
+        switchAlert().dismiss();
     }
 
-    public boolean isAlertPresent(){
+
+    public void sendKeysAlert(String text){
+        wait.until(ExpectedConditions.alertIsPresent());
+        switchAlert().sendKeys(text);
+        switchAlert().accept();
+    }
+
+    private boolean isAlertPresent(){
         try {
             driver.switchTo().alert().accept();
             return true;
@@ -37,5 +42,5 @@ public class AlertHelper {
         }
         return false;
     }
-
 }
+
