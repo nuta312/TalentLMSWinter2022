@@ -37,7 +37,7 @@ public class alertDemo {
         alert.sendKeys("Erlan");
         Thread.sleep(1000);
         alert.accept();
-        WebElementActions.pause(1000);
+
 
 
 
