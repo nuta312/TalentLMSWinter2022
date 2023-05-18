@@ -1,10 +1,8 @@
 package ui.regression;
 
-import com.digital.ui.pages.UserPage.UsersPage;
+
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
-import io.qameta.allure.Owner;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import ui.BaseUiTest;
 

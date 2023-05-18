@@ -1,4 +1,4 @@
-package ui.account_settingsTest;
+package ui.smoke.account_settings;
 
 import com.digital.ui.pages.HomePage;
 import com.digital.ui.pages.LoginPage;

@@ -13,8 +13,6 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.Arrays;
-import java.util.List;
 
 import static org.testng.AssertJUnit.assertTrue;
 
