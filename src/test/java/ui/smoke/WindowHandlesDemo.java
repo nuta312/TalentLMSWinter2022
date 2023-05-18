@@ -4,7 +4,6 @@ import com.digital.ui.driver.BrowserHelper;
 import com.digital.ui.driver.Driver;
 import com.digital.ui.element_helper.WebElementActions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class WindowHandlesDemo {
 
@@ -26,3 +25,4 @@ public class WindowHandlesDemo {
         WebElementActions.pause(2000);
     }
 }
+

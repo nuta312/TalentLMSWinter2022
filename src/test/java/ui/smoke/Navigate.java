@@ -13,3 +13,5 @@ public class Navigate extends BaseUiTest {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
     }
 }
+
+

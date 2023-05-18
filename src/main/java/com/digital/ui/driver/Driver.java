@@ -3,8 +3,6 @@ package com.digital.ui.driver;
 import com.digital.config.ConfigReader;
 import org.openqa.selenium.WebDriver;
 
-import java.net.MalformedURLException;
-
 
 public class Driver {
 
@@ -23,11 +21,17 @@ public class Driver {
                 case "edge":
                     driver = EdgeWebDriver.loadEdgeDriver();
                     break;
+
+                case "sauce_windows_chrome":
+                    driver = SauceLabsWindowsChrome.loadSauceLabWindowsChromeDriver();
+
                 case "firefox":
                     driver = FirefoxWebDriver.loadFirefoxDriver();
+
                     break;
                 case  "sauce_mac_safari":
                     driver = SauceLabsMacFireFox.loadSauceMacFireFoxDriver();
+
                     break;
                 default:
                     throw new RuntimeException("You provided wrong browser name");

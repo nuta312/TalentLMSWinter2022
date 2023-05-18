@@ -1,23 +1,20 @@
+
 package com.digital.ui.driver;
 
 import org.openqa.selenium.WebDriver;
-
 import java.util.LinkedList;
 import java.util.Set;
 
 public class BrowserHelper {
     WebDriver driver = Driver.getDriver();
-
-    public void open(final String URL){
+    public void open (final String URL){
         driver.navigate().to(URL);
     }
-
     public void goBack(){
-        driver.navigate().forward();
+        driver.navigate().back();
     }
-
-    public  void goForward(){
-        driver.navigate().refresh();
+    public void goForward(){
+        driver.navigate().forward();
     }
 
     public void refresh(){
@@ -42,3 +39,4 @@ public class BrowserHelper {
         driver.switchTo().window(windowID.get(0));
     }
 }
+

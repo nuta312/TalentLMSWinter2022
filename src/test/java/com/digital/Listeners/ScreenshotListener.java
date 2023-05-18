@@ -1,9 +1,7 @@
 package com.digital.Listeners;
 
-
 import com.digital.ui.driver.Driver;
 import com.digital.ui.driver.FirefoxWebDriver;
-import com.digital.ui.pages.LoginPage;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
@@ -22,7 +20,7 @@ import java.nio.file.Paths;
 
 public class ScreenshotListener extends TestListenerAdapter {
 
-//    private boolean createFile(File screenshot) {
+    //    private boolean createFile(File screenshot) {
 //        boolean fileCreated = false;
 //
 //        if (screenshot.exists()) {
@@ -90,10 +88,10 @@ public class ScreenshotListener extends TestListenerAdapter {
 //        }
 //    }
 // Text attachments for Allure
-@Attachment(value = "{0}", type = "text/plain")
-public static String saveTextLog(String message) {
-    return message;
-}
+    @Attachment(value = "{0}", type = "text/plain")
+    public static String saveTextLog(String message) {
+        return message;
+    }
 
     // Text attachments for Allure
     @Attachment(value = "Page screenshot", type = "image/png")

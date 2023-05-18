@@ -25,5 +25,4 @@ public class FirefoxWebDriver {
         driver.manage().window().maximize();
         return driver;
     }
-
 }

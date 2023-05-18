@@ -1,14 +1,9 @@
 package com.digital.ui.pages;
 
 import com.digital.ui.driver.Driver;
-import io.qameta.allure.Feature;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.testng.annotations.Listeners;
-
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
