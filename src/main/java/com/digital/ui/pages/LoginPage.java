@@ -26,8 +26,9 @@ public class LoginPage extends BasePage{
 
     public LoginPage authorization(){
         elementActions.input(login,ConfigReader.getProperty("login"))
-                .input(password,ConfigReader.getProperty("password"));
+       .input(password,ConfigReader.getProperty("password"));
         BtnLogin.click();
         return this;
     }
 }
+

@@ -1,0 +1,5 @@
+[WARN ] 2023-05-18 19:24:05.041 [main] WebElementActions - I'm trying to write nuta1bema [[ChromeDriver: chrome on WINDOWS (163c6da37fdf0355e50b2e0cd7500df7)] -> name: login]
+[INFO ] 2023-05-18 19:24:05.285 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-18 19:24:05.308 [main] WebElementActions - I'm trying to write nuta1bema [[ChromeDriver: chrome on WINDOWS (163c6da37fdf0355e50b2e0cd7500df7)] -> name: password]
+[INFO ] 2023-05-18 19:24:05.500 [main] WebElementActions - Succesfully write
+[WARN ] 2023-05-18 19:24:26.542 [main] WebElementActions - Trying to click the Proxy element for: DefaultElementLocator 'By.xpath: //div[contains(@class,'tl-bold-link')]//a[contains(text(),'Users')]'
