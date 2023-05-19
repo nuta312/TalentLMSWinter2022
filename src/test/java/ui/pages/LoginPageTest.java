@@ -1,4 +1,4 @@
-package ui.login;
+package ui.pages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

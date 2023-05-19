@@ -1,1 +1,0 @@
-{"uuid":"732d70c4-0d58-4baa-8448-e91bf7acbfc8","name":"ui.login.UserPageTest.setUp","children":["b2d8c433-9248-46ca-86b5-49ce0cd959cf"],"description":"","befores":[{"name":"setUp","status":"broken","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1684489806661,"stop":1684489806661}],"afters":[],"start":1684489806661,"stop":1684489806661}

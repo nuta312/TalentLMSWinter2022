@@ -1,4 +1,4 @@
-package ui.login;
+package ui.pages;
 
 import com.digital.ui.driver.Driver;
 import com.digital.ui.element_helper.WebElementActions;

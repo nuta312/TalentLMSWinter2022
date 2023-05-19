@@ -1,4 +1,4 @@
-package ui.login;
+package ui.pages;
 import com.digital.ui.data;
 import com.digital.ui.driver.Driver;
 import org.openqa.selenium.By;
