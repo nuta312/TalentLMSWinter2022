@@ -1,8 +1,8 @@
 package com.digital.ui;
 
 public enum data {
-    NAME("john"),
-    SURNAME("Doe"),
+    NAME("nurti5"),
+    SURNAME("samov"),
     EMAIL(data.NAME.getUserInfo()+"."+data.SURNAME.getUserInfo()+"@gmail.com"),
 
     PASSWORD("SomeWords123546"),

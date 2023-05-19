@@ -1,0 +1,6 @@
+ui\smoke\LoginTests.class
+ui\BaseUiTest.class
+ui\login\LoginPageTest.class
+ui\login\UserPageTest.class
+ui\login\AddUserTest.class
+ui\login\BaseUiTest.class

@@ -1,40 +1,33 @@
 package com.digital.ui.pages;
 
-import org.openqa.selenium.By;
+import com.digital.config.ConfigReader;
+import com.digital.ui.driver.Driver;
+import com.digital.ui.element_helper.WebElementActions;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-import static com.digital.ui.driver.Driver.getDriver;
+/**
+ * @author Adilet Kushubekov
+ */
+public class LoginPage extends BasePage{
+    WebElementActions elementActions = new WebElementActions();
 
-public class LoginPage extends BasePage {
-    String url="https://www.talentlms.com/";
-    public void login() {
-        getDriver().navigate().to(url);
-    }
-    public void Loginpress(){
-        WebElement element= getDriver().findElement(By.xpath("/html/body/header/nav/div/div/div[2]/ul/li[1]/a"));
-        we.press(element);
-    }
-    public void Loginentering(){
-        WebElement domenfield= getDriver().findElement(By.xpath("//input[@name='domain']"));
-        we.input(domenfield,"nna");
-        WebElement login= getDriver().findElement(By.xpath("//input[@name='login']"));
-        we.input(login,"samatelikbaev");
-        WebElement password= getDriver().findElement(By.xpath("//input[@name='password']"));
-        we.input(password,"36654299");
-        WebElement log= getDriver().findElement(By.xpath("//*//input[@name='submit']"));
-        we.press(log);
-    }
-    public void Loginchoice(){
-        WebElement ch= getDriver().findElement(By.xpath("/html/body/div[2]/div[1]/div/div/div[2]/div[2]/div[4]/a"));
-        we.press(ch);
+    @FindBy(name = "login")
+    public WebElement login;
+    @FindBy(name = "password")
+    public WebElement password;
+    @FindBy(name = "submit")
+    public WebElement BtnLogin;
+
+    public LoginPage openPage(){
+        Driver.getDriver().get(ConfigReader.getProperty("applicationUrl"));
+        return this;
     }
 
-    public static void main(String[] args) {
-        LoginPage loginPage=new LoginPage();
-        loginPage.login();
-        loginPage.Loginpress();
-        loginPage.Loginentering();
-        loginPage.Loginchoice();
-
+    public LoginPage authorization(){
+        elementActions.input(login,ConfigReader.getProperty("login"))
+                .input(password,ConfigReader.getProperty("password"));
+        BtnLogin.click();
+        return this;
     }
 }

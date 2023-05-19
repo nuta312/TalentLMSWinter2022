@@ -3,8 +3,9 @@
 <suite name="All tests">
     <test name="Regression Tests">
         <classes>
-            <class name="testng.CalculatorTest"></class>
-            <class name="testng.TestNGDemo"></class>
+            <class name="ui.login.LoginPageTest"></class>
+            <class name="ui.login.UserPageTest"></class>
+            <class name="ui.login.AddUserTest"></class>
         </classes>
     </test>
 </suite>

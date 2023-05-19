@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [All tests]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Regression Tests(failed)" verbose="0">
+    <classes>
+      <class name="ui.login.UserPageTest">
+        <methods>
+          <include name="userCheckboxActive"/>
+          <include name="Usertype"/>
+          <include name="setUpUiTest"/>
+          <include name="useremail"/>
+          <include name="tearDown"/>
+          <include name="username"/>
+          <include name="userSurname"/>
+          <include name="beforeclass"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- ui.login.UserPageTest -->
+      <class name="ui.login.AddUserTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="ValidEmail"/>
+          <include name="beforeclass"/>
+          <include name="addedUser"/>
+          <include name="setUpUiTest"/>
+          <include name="FirstNameInputField"/>
+          <include name="tearDown"/>
+          <include name="SurNameInputField"/>
+          <include name="UsernameField"/>
+          <include name="UploadPicture"/>
+          <include name="PasswordField"/>
+        </methods>
+      </class> <!-- ui.login.AddUserTest -->
+    </classes>
+  </test> <!-- Regression Tests(failed) -->
+</suite> <!-- Failed suite [All tests] -->

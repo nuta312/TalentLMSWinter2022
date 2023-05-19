@@ -8,6 +8,7 @@ import com.digital.ui.pages.LoginPage;
 import com.digital.ui.pages.UsersPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 
     public abstract class BaseUiTest {
@@ -26,6 +27,12 @@ public void setUpUiTest(){
     driver= Driver.getDriver();
     userPage=new UsersPage();
     addUserPage=new AddUserPage();
+    LoginPage loginPage=new LoginPage();
 
+}
+@AfterTest
+        public void tearDown(){
+    driver.close();
+    driver.quit();
 }
 }
