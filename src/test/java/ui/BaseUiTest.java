@@ -52,6 +52,7 @@ public abstract class BaseUiTest implements DriverActions {
     @AfterClass
     public void tearDown() {
         Driver.closeDriver();
+
     }
 }
 

@@ -8,10 +8,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="TalentLMSWinter2022" />
+        <module name="Winter2022TAF" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Winter2022TAF" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>

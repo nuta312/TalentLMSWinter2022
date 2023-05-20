@@ -2,12 +2,12 @@ package com.digital.ui.pages;
 
 import com.digital.ui.driver.Driver;
 import com.digital.ui.element_helper.WebElementActions;
+import com.digital.ui.pages.basePage.BasePage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class ExpediaHomePage extends BasePage{
+public class ExpediaHomePage extends BasePage {
 
     private WebElementActions elementActions = new WebElementActions();
 
