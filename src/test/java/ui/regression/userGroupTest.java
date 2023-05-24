@@ -1,17 +1,7 @@
 package ui.regression;
 
 import com.digital.annotations.TestCase;
-import com.digital.ui.pages.LoginPage;
-import com.digital.ui.pages.UserPage.UsersGroupsAdmins;
-import com.digital.ui.pages.UserPage.UsersOptions;
-import com.digital.ui.pages.UserPage.UsersPage;
 import io.qameta.allure.Description;
-import io.qameta.allure.Feature;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import ui.BaseUiTest;
 
