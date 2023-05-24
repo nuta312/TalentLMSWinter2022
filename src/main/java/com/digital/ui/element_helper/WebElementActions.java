@@ -24,7 +24,7 @@ public class WebElementActions {
     public WebElementActions input(WebElement element,String txt){
         logger.warn("I'm trying to write " + txt + " " + element);
         waitElementToBeDisplayed(element);
-        element.clear();
+     //   element.clear();
         element.sendKeys(txt);
         logger.info("Succesfully write");
         return this;
