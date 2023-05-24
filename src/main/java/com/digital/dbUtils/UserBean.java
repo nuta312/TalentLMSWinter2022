@@ -13,7 +13,7 @@ import java.util.List;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class Bean {
+public class UserBean {
     int emp_no;
     String first_name;
     String last_name;
@@ -21,21 +21,21 @@ public class Bean {
     String gender;
     String hire_date;
 
-    public static List<Bean> getAll() throws SQLException {
+    public static List<UserBean> getAll() throws SQLException {
         String query = "SELECT * FROM employees";
         try (ResultSet resultSet = DBConnection.query(query)) {
-            return new BeanProcessor().toBeanList(resultSet, Bean.class);
+            return new BeanProcessor().toBeanList(resultSet, UserBean.class);
         }
     }
 
-    public static Bean getBy(String column, String value) throws SQLException {
+    public static UserBean getBy(String column, String value) throws SQLException {
         String query = "SELECT * FROM employees WHERE " + column + " = ?;";
         ResultSet rs = DBConnection.query(query, value);
         if (!rs.next()) return null;
-        return new BeanProcessor().toBean(rs, Bean.class);
+        return new BeanProcessor().toBean(rs, UserBean.class);
     }
 
-    public Bean(ResultSet rs) throws SQLException {
+    public UserBean(ResultSet rs) throws SQLException {
         new BeanProcessor().populateBean(rs, this);
     }
 
