@@ -1,4 +1,4 @@
-package ui.pages;
+package ui.regression;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;

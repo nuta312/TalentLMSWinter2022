@@ -122,7 +122,7 @@ public class AddUserPage extends BasePage{
         return this;
     }
     public AddUserPage uploadPic(String txt){
-        webElementActions.fileupload(upload,txt);
+        //webElementActions.fileupload(upload,txt);
         webElementActions.press(fileapply);
         return this;
     }

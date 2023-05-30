@@ -1,4 +1,4 @@
-package ui.pages;
+package ui.regression;
 
 import com.digital.ui.data;
 import com.digital.ui.driver.Driver;
