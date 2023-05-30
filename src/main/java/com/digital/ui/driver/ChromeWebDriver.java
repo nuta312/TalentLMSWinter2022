@@ -15,6 +15,9 @@ public class ChromeWebDriver implements  Waits{
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-extensions");
         options.addArguments("--no-sandbox");
+        if(Boolean.parseBoolean(ConfigReader.getProperty("headless"))){
+            options.addArguments("--headless");
+        }
 
         if (Boolean.parseBoolean(ConfigReader.getProperty("headless"))){
             options.addArguments("--headless");

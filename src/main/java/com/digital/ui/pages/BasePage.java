@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage implements DriverActions {
     WebElementActions elementActions = new WebElementActions();
+    WebElementActions webElementActions=new WebElementActions();
     public BasePage(){
         PageFactory.initElements(Driver.getDriver(), this);
 

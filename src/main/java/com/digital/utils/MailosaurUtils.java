@@ -4,5 +4,6 @@ public class MailosaurUtils {
 
     public static void dummyFun(){
         System.out.println("....");
+
     }
 }
