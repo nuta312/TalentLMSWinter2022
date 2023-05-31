@@ -5,19 +5,14 @@ import com.digital.ui.element_helper.WebElementActions;
 import com.digital.ui.pages.HomePage;
 import com.digital.ui.pages.LoginPage;
 import com.digital.ui.pages.account_settings.UsersPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.*;
 
-import javax.swing.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.digital.utils.FakeDataProvider.faker;
+
 import static org.testng.Assert.*;
 
 public class UserPageTest {
