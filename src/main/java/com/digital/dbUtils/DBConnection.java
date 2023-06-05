@@ -2,7 +2,6 @@ package com.digital.dbUtils;
 
 import com.digital.config.ConfigReader;
 import com.mysql.cj.jdbc.MysqlDataSource;
-import org.apache.commons.dbutils.QueryRunner;
 
 import java.sql.*;
 
@@ -53,7 +52,7 @@ public class DBConnection {
         }
     }
 
-    private static MysqlDataSource getBaseDataSource(String database) {
+    private static MysqlDataSource getBaseDataSource(String database){
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setServerName(ConfigReader.getProperty("server"));
         dataSource.setPortNumber(Integer.parseInt(ConfigReader.getProperty("port")));
