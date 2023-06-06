@@ -53,13 +53,14 @@ public class DBConnection {
         }
     }
 
-    private static MysqlDataSource getBaseDataSource(String database) {
+    private static MysqlDataSource getBaseDataSource(String database) throws SQLException {
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setServerName(ConfigReader.getProperty("server"));
         dataSource.setPortNumber(Integer.parseInt(ConfigReader.getProperty("port")));
         dataSource.setUser(ConfigReader.getProperty("DBuser"));
         dataSource.setPassword(ConfigReader.getProperty("DBpassword"));
         dataSource.setDatabaseName(database);
+        dataSource.setServerTimezone("Asia/Bishkek");
         return dataSource;
     }
 

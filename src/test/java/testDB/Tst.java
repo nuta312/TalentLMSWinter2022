@@ -12,12 +12,16 @@ public class Tst {
         DBConnection.open("employees");
         ResultSet rs = DBConnection.query("SELECT * FROM employees WHERE first_name = ?;", "Georgi");
         rs.next();
-        System.out.println(new UserBean(rs));
-//        UserBean.getAll().forEach(System.out::println);
-        System.out.println(UserBean.getBy("first_name", "Georgi"));
-        List<UserBean> employeesData = UserBean.getAll();
-        employeesData.forEach(System.out::println);
-        System.out.println(employeesData.size());
+        while(rs.next()){
+            UserBean user = new UserBean(rs);
+            System.out.println(user);
+        }
+    //    System.out.println(new UserBean(rs));
+ //       System.out.println(UserBean.getBy("first_name", "Georgi"));
+//        System.out.println(UserBean.getBy("first_name", "Georgi"));
+//        List<UserBean> employeesData = UserBean.getAll();
+//        employeesData.forEach(System.out::println);
+//        System.out.println(employeesData.size());
         DBConnection.close();
 
 

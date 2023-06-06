@@ -17,24 +17,24 @@ import org.apache.logging.log4j.LogManager;
 public class WebElementActions {
 
 
-    private static Logger logger = LogManager.getLogger(WebElementActions.class);
+   // private static Logger logger = LogManager.getLogger(WebElementActions.class);
 
     Actions actions = new Actions(Driver.getDriver());
 
     public WebElementActions input(WebElement element,String txt){
-        logger.warn("I'm trying to write " + txt + " " + element);
+      //  logger.warn("I'm trying to write " + txt + " " + element);
         waitElementToBeDisplayed(element);
         element.clear();
         element.sendKeys(txt);
-        logger.info("Succesfully write");
+      //  logger.info("Succesfully write");
         return this;
     }
 
     public WebElementActions press(WebElement element){
-        logger.warn("Trying to click the " + element);
+   //     logger.warn("Trying to click the " + element);
         waitElementToBeDisplayed(element);
         element.click();
-        logger.info("Successfully clicked");
+     //   logger.info("Successfully clicked");
         return this;
     }
 
