@@ -10,6 +10,10 @@ public class FakeDataProvider {
 
         return faker.name().firstName();
     }
+
+    public static String generateLastName(){
+        return faker.name().lastName();
+    }
     public static String generateSiteName(){
         return faker.company().name();
     }
