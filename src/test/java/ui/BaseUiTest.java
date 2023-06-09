@@ -9,17 +9,14 @@ import com.digital.ui.pages.LoginPage;
 import com.digital.ui.pages.UserPage.*;
 import com.digital.ui.pages.account_settings.BasicSettingsPage;
 import com.digital.utils.WaitforSeconds;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-
+@Slf4j
 public abstract class BaseUiTest implements DriverActions {
-    private static Logger logger = LogManager.getLogger(BaseUiTest.class);
+
     public WebElementActions elementActions;
     public BasicSettingsPage basicSettingsPage;
     public LoginPage loginPage;
