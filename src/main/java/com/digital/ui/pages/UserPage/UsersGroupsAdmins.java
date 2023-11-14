@@ -1,5 +1,8 @@
 package com.digital.ui.pages.UserPage;
 
+
+import com.digital.ui.pages.BasePage;
+
 import com.digital.ui.driver.Driver;
 import com.digital.ui.pages.BasePage;
 import org.openqa.selenium.By;

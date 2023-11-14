@@ -1,5 +1,4 @@
-[WARN ] 2023-05-18 19:24:05.041 [main] WebElementActions - I'm trying to write nuta1bema [[ChromeDriver: chrome on WINDOWS (163c6da37fdf0355e50b2e0cd7500df7)] -> name: login]
-[INFO ] 2023-05-18 19:24:05.285 [main] WebElementActions - Succesfully write
-[WARN ] 2023-05-18 19:24:05.308 [main] WebElementActions - I'm trying to write nuta1bema [[ChromeDriver: chrome on WINDOWS (163c6da37fdf0355e50b2e0cd7500df7)] -> name: password]
-[INFO ] 2023-05-18 19:24:05.500 [main] WebElementActions - Succesfully write
-[WARN ] 2023-05-18 19:24:26.542 [main] WebElementActions - Trying to click the Proxy element for: DefaultElementLocator 'By.xpath: //div[contains(@class,'tl-bold-link')]//a[contains(text(),'Users')]'
+[INFO ] 2023-06-09 09:53:20.867 [main] ApiRequest - Performed POST api/v1/usersignup
+[INFO ] 2023-06-09 09:53:20.876 [main] ApiRequest - Body is {"email":"janine.yost@yahoo.com","login":"seth.schroeder","password":"7Fd*A2!028NbY$Bg.","first_name":"Graham","last_name":"Gutkowski"}
+[WARN ] 2023-06-09 09:53:24.880 [main] ApiRequest - Response is : {"id":12,"login":"seth.schroeder","first_name":"Graham","last_name":"Gutkowski","email":"janine.yost@yahoo.com","restrict_email":"0","user_type":"Learner-Type","timezone":"(GMT +01:00) Greenwich Mean Time: Edinburgh, Lisbon, London","language":"English","status":"active","level":"1","points":"0","created_on":"09\/06\/2023, 04:53:25","last_updated":"09\/06\/2023, 04:53:25","last_updated_timestamp":1686282805,"avatar":"https:\/\/d3j0t7vrtr92dk.cloudfront.net\/images\/default_user.png","bio":null,"login_key":"https:\/\/kubabeck.talentlms.com\/index\/autologin\/key:xg1llm4nvpdxi8fvhsv1168628280512"}
+[WARN ] 2023-06-09 09:53:24.880 [main] ApiRequest - Status code is : 200

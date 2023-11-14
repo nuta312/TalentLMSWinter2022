@@ -4,12 +4,17 @@ import com.github.javafaker.Faker;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
+
+
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.util.Random;
+
+import static io.restassured.RestAssured.requestSpecification;
+
 
 public class Demo1 {
     @Test
@@ -19,35 +24,24 @@ public class Demo1 {
         requestSpecification.contentType(ContentType.JSON);
         requestSpecification.accept(ContentType.JSON);
 
+
         Response response = requestSpecification.request(Method.GET);
         response.prettyPrint();
     }
 
-//    @Test
-//    public void createNewUserTest() {
-//        String userPayload = "    {\n" +
-//                "        \"name\": \"Jim Beam\",\n" +
-//                "        \"email\": \"jack3329@gmail.com\",\n" +
-//                "        \"gender\": \"male\",\n" +
-//                "        \"status\": \"active\"\n" +
-//                "    }";
-//
-//        RequestSpecification requestSpecification = RestAssured.given();
-//        requestSpecification.baseUri("https://gorest.co.in/public/v2/users");
-//        requestSpecification.header("Authorization", "Bearer 9bb228962a5436bc9ac217ad3511d60faa102226c6a7b8f46b24690095d0f249");
-//        requestSpecification.contentType(ContentType.JSON);
-//        requestSpecification.accept(ContentType.JSON);
-//        requestSpecification.body(userPayload);
-//        Response response = requestSpecification.request("POST");
-//        response.prettyPrint();
-//        Assert.assertEquals(response.getStatusCode(), 422);
-//    }
+
+
     public static Faker faker = new Faker();
+    String name = faker.name().firstName();
+    String email = faker.internet().emailAddress();
+    String gender = faker.demographic().sex();
+
     public String randomStatus(){
         String [] genders = {"active","inactive"};
         int randomIndex = (int) (Math.random() * genders.length);
         return genders[randomIndex];
     }
+
 
 
     @Test
@@ -77,4 +71,47 @@ public class Demo1 {
 
 
     }
+
+
+
+    @Test
+    public void jsonPathTest(){
+
+        RequestSpecification requestSpecification = RestAssured.given();
+        requestSpecification.baseUri("https://reqres.in/api/users");
+        requestSpecification.contentType(ContentType.JSON);
+        requestSpecification.accept(ContentType.JSON);
+     //   requestSpecification.pathParam("id", "3");
+
+        Response response = requestSpecification.request(Method.GET);
+
+        JsonPath jsonPath = response.jsonPath();
+        int totalUsers = jsonPath.getInt("total");
+        System.out.println(totalUsers);
+    }
+
+    @Test
+    public void getEmmaTest(){
+        RequestSpecification requestSpecification = RestAssured.given();
+        requestSpecification.baseUri("https://reqres.in/api/users?page=1");
+        requestSpecification.contentType(ContentType.JSON);
+        requestSpecification.accept(ContentType.JSON);
+     //   requestSpecification.pathParam("first_name", "Emma");
+        //   requestSpecification.pathParam("id", "3");
+
+        Response response = requestSpecification.request(Method.GET);
+
+        JsonPath jsonPath = response.jsonPath();
+        String nameEmma = jsonPath.getString("data[2].first_name");
+        System.out.println(nameEmma);
+    }
+
+
+
 }
+
+
+
+
+
+
